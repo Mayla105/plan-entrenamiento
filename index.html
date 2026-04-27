@@ -2,8 +2,18 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Plan de Entrenamiento</title>
+
+<!-- PWA / iPhone app mode -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Mi Plan">
+<meta name="theme-color" content="#0f0f0f">
+
+<!-- Ícono para pantalla de inicio -->
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='40' fill='%230f0f0f'/%3E%3Ctext x='90' y='115' font-size='90' text-anchor='middle'%3E🏋️%3C/text%3E%3C/svg%3E">
+
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -30,6 +40,11 @@
     font-size: 14px;
     line-height: 1.6;
     min-height: 100vh;
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+    -webkit-tap-highlight-color: transparent;
   }
 
   .header {
@@ -365,7 +380,7 @@
         <div class="day-dot dot-oly"></div>
         <div class="day-btn-info">
           <div class="day-btn-name">Lunes</div>
-          <div class="day-btn-sub">Oly Día 1 + WOD</div>
+          <div class="day-btn-sub">Oly 19hs → WOD 20:30 full</div>
         </div>
         <div class="load-pips">
           <div class="pip on-high"></div><div class="pip on-high"></div><div class="pip on-high"></div>
@@ -376,7 +391,7 @@
         <div class="day-dot dot-kine"></div>
         <div class="day-btn-info">
           <div class="day-btn-name">Martes</div>
-          <div class="day-btn-sub">Kine Día 1 + Glúteos</div>
+          <div class="day-btn-sub">Kine + Glúteos · Cinta 19hs</div>
         </div>
         <div class="load-pips">
           <div class="pip on-med"></div><div class="pip on-med"></div><div class="pip"></div>
@@ -387,7 +402,7 @@
         <div class="day-dot dot-oly"></div>
         <div class="day-btn-info">
           <div class="day-btn-name">Miércoles</div>
-          <div class="day-btn-sub">Oly Día 2 + WOD</div>
+          <div class="day-btn-sub">Oly 19hs → WOD 20:30 escalado</div>
         </div>
         <div class="load-pips">
           <div class="pip on-high"></div><div class="pip on-high"></div><div class="pip on-high"></div>
@@ -398,7 +413,7 @@
         <div class="day-dot dot-kine"></div>
         <div class="day-btn-info">
           <div class="day-btn-name">Jueves</div>
-          <div class="day-btn-sub">Kine Día 2 + Glúteos</div>
+          <div class="day-btn-sub">Kine + Glúteos · Hyrox o Cinta</div>
         </div>
         <div class="load-pips">
           <div class="pip on-med"></div><div class="pip on-med"></div><div class="pip"></div>
@@ -409,7 +424,7 @@
         <div class="day-dot dot-oly"></div>
         <div class="day-btn-info">
           <div class="day-btn-name">Viernes</div>
-          <div class="day-btn-sub">Oly Día 3 + WOD</div>
+          <div class="day-btn-sub">Oly 19hs → WOD 20:30 full</div>
         </div>
         <div class="load-pips">
           <div class="pip on-high"></div><div class="pip on-high"></div><div class="pip on-high"></div>
@@ -453,11 +468,11 @@
     ══════════════════════════════ -->
     <div class="plan-view" id="plan-lunes">
       <div class="plan-header">
-        <div class="plan-day-label" style="color:var(--blue)">Lunes</div>
+        <div class="plan-day-label" style="color:var(--blue)">Lunes — 19hs Oly · 20:30 WOD</div>
         <div class="plan-title">Oly — Día 1: Snatch</div>
         <div class="plan-tags">
-          <span class="tag tag-oly">Olímpico</span>
-          <span class="tag tag-optional">+ WOD tarde</span>
+          <span class="tag tag-oly">Olímpico 19hs</span>
+          <span class="tag tag-kine">WOD full 20:30</span>
           <span class="tag tag-warn">⚡ Carga alta</span>
         </div>
       </div>
@@ -581,7 +596,7 @@
       </div>
 
       <div class="note-box note-warn">
-        <strong>⚠ WOD tarde:</strong> Si el WOD tiene alto componente lumbar o de piernas, escalarlo o saltearlo. El Lunes ya acumula mucho volumen de Snatch.
+        <strong>💪 WOD 20:30 — Hacelo full.</strong> El Snatch es técnico y neuromotor, no destroza muscularmente como el Deadlift. Llegás al WOD con el sistema nervioso activado pero sin fatiga de piernas real. Este es uno de tus días para entrenar a intensidad de competencia.
       </div>
     </div>
 
@@ -591,12 +606,12 @@
     ══════════════════════════════ -->
     <div class="plan-view" id="plan-martes">
       <div class="plan-header">
-        <div class="plan-day-label" style="color:var(--green)">Martes — Mañana</div>
+        <div class="plan-day-label" style="color:var(--green)">Martes — Mañana Kine · 19hs Cinta</div>
         <div class="plan-title">Kine Día 1 + Glúteos</div>
         <div class="plan-tags">
           <span class="tag tag-kine">Fuerza Kine</span>
           <span class="tag" style="background:rgba(192,132,252,0.1);color:var(--purple)">🍑 Glúteos</span>
-          <span class="tag tag-optional">WOD/Cardio opcional tarde</span>
+          <span class="tag tag-optional">Cinta Zona 2 · 19hs</span>
         </div>
       </div>
 
@@ -721,6 +736,10 @@
           </div>
         </div>
       </div>
+
+      <div class="note-box" style="margin-bottom:10px">
+        <strong>🏃 Cinta 19hs — Zona 2:</strong> 20–30 minutos a ritmo conversacional (podés hablar con frases completas). No es cardio intenso — es recuperación activa y base aeróbica. Si llegás muy cansada de la mañana, bajalo a 15' o saltealo sin culpa.
+      </div>
     </div>
 
 
@@ -729,17 +748,17 @@
     ══════════════════════════════ -->
     <div class="plan-view" id="plan-miercoles">
       <div class="plan-header">
-        <div class="plan-day-label" style="color:var(--blue)">Miércoles</div>
+        <div class="plan-day-label" style="color:var(--blue)">Miércoles — 19hs Oly · 20:30 WOD</div>
         <div class="plan-title">Oly — Día 2: Front Squat + Deadlift</div>
         <div class="plan-tags">
-          <span class="tag tag-oly">Olímpico</span>
-          <span class="tag tag-optional">+ WOD tarde</span>
+          <span class="tag tag-oly">Olímpico 19hs</span>
+          <span class="tag tag-warn">WOD escalado 20:30</span>
           <span class="tag tag-warn">⚡ Día más exigente</span>
         </div>
       </div>
 
       <div class="note-box-standalone">
-        <strong>⚠ Atención:</strong> Este es el día de mayor carga lumbar (Front Squat pesado + Deadlift). Si el WOD de la tarde tiene componente lumbar o de piernas, priorizar escalarlo o saltearlo.
+        <strong>⚠ WOD 20:30 — Escalado.</strong> Front Squat y Deadlift pesado ya pusieron mucho en piernas y lumbar. Entrás al WOD con fatiga real en esas cadenas. Bajá cargas, reducí rondas si hace falta — el objetivo es el estímulo de movimiento, no el score. Con hernias, este día no es para demostrar nada.
       </div>
 
       <div class="block open">
@@ -862,12 +881,12 @@
     ══════════════════════════════ -->
     <div class="plan-view" id="plan-jueves">
       <div class="plan-header">
-        <div class="plan-day-label" style="color:var(--green)">Jueves — Mañana</div>
+        <div class="plan-day-label" style="color:var(--green)">Jueves — Mañana Kine · 19hs Hyrox o Cinta</div>
         <div class="plan-title">Kine Día 2 + Glúteos</div>
         <div class="plan-tags">
           <span class="tag tag-kine">Fuerza Kine</span>
           <span class="tag" style="background:rgba(192,132,252,0.1);color:var(--purple)">🍑 Glúteos</span>
-          <span class="tag tag-optional">Hyrox opcional tarde</span>
+          <span class="tag" style="background:rgba(255,95,95,0.1);color:var(--red)">Hyrox o Cinta 19hs</span>
         </div>
       </div>
 
@@ -975,7 +994,7 @@
       </div>
 
       <div class="note-box note-warn">
-        <strong>⚠ Hyrox tarde:</strong> Si vas a Hyrox, ese es el plan del día. No agregar otro estímulo intenso. Tratalo como sesión principal, no como extra.
+        <strong>🏃 19hs — Hyrox o Cinta:</strong> Si hay Hyrox, ese es el plan completo de la tarde — no agregar nada más. Si no, cinta 20–30' en Zona 2 a ritmo conversacional. Si las semanas se acumulan pesadas, priorizá la cinta sobre Hyrox para no sobrecargar el jueves.
       </div>
     </div>
 
@@ -985,11 +1004,11 @@
     ══════════════════════════════ -->
     <div class="plan-view" id="plan-viernes">
       <div class="plan-header">
-        <div class="plan-day-label" style="color:var(--blue)">Viernes</div>
+        <div class="plan-day-label" style="color:var(--blue)">Viernes — 19hs Oly · 20:30 WOD</div>
         <div class="plan-title">Oly — Día 3: Clean & Jerk</div>
         <div class="plan-tags">
-          <span class="tag tag-oly">Olímpico</span>
-          <span class="tag tag-optional">+ WOD tarde</span>
+          <span class="tag tag-oly">Olímpico 19hs</span>
+          <span class="tag tag-kine">WOD full 20:30</span>
           <span class="tag tag-warn">⚡ Carga alta</span>
         </div>
       </div>
@@ -1103,7 +1122,7 @@
       </div>
 
       <div class="note-box note-warn">
-        <strong>⚠ WOD tarde:</strong> Clean & Jerk es demandante para muñecas, hombros y cadera. Si el WOD repite esos patrones, considerá escalar o saltear.
+        <strong>💪 WOD 20:30 — Hacelo full.</strong> El Clean & Jerk es técnico como el Snatch — la fatiga es neuromotora, no muscular destructiva. Este es tu segundo día de intensidad de competencia en la semana. Aprovechalo.
       </div>
     </div>
 
