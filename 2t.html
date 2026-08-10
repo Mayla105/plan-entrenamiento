@@ -2405,7 +2405,7 @@
 
 <script>
 // ── Datos de navegación 2T ──
-const BWP = {
+const PLAN2T = {
   ciclos: [
     {
       id: 'c1', label: 'Ciclo 1', sub: 'S1 · S2 · S3 · S4 · S5',
@@ -2479,14 +2479,14 @@ const BWP = {
   ]
 };
 
-const ultimoCiclo = BWP.ciclos[BWP.ciclos.length - 1];
+const ultimoCiclo = PLAN2T.ciclos[PLAN2T.ciclos.length - 1];
 let activeMes = ultimoCiclo.id;
 let activeSem = ultimoCiclo.semanas[ultimoCiclo.semanas.length - 1].id;
 let activeDay = null;
 
 function renderMeses() {
   const list = document.getElementById('bwp-mes-list');
-  const cicloActivo = BWP.ciclos.find(c => c.id === activeMes);
+  const cicloActivo = PLAN2T.ciclos.find(c => c.id === activeMes);
   list.innerHTML = `
     <div class="ciclo-dropdown" id="ciclo-dropdown">
       <button class="ciclo-dropdown-btn" id="ciclo-dropdown-btn" onclick="toggleCicloDropdown(event)">
@@ -2498,7 +2498,7 @@ function renderMeses() {
         <span class="ciclo-chevron">▼</span>
       </button>
       <div class="ciclo-dropdown-panel" id="ciclo-dropdown-panel">
-        ${BWP.ciclos.map(ciclo => `
+        ${PLAN2T.ciclos.map(ciclo => `
           <button class="ciclo-option ${ciclo.id === activeMes ? 'active' : ''}"
             onclick="selectCiclo('${ciclo.id}', event)">
             <div class="day-dot" style="background:var(--blue); flex-shrink:0;"></div>
@@ -2524,7 +2524,7 @@ function toggleCicloDropdown(e) {
 function selectCiclo(id, e) {
   if (e) e.stopPropagation();
   activeMes = id;
-  const ciclo = BWP.ciclos.find(c => c.id === id);
+  const ciclo = PLAN2T.ciclos.find(c => c.id === id);
   activeSem = ciclo.semanas[0].id;
   activeDay = null;
   const btn = document.getElementById('ciclo-dropdown-btn');
@@ -2542,7 +2542,7 @@ document.addEventListener('click', function() {
 });
 
 function renderContent() {
-  const mes = BWP.ciclos.find(m => m.id === activeMes);
+  const mes = PLAN2T.ciclos.find(m => m.id === activeMes);
   if (!mes) return;
 
   const semHeader = document.getElementById('bwp-sem-header');
@@ -2668,7 +2668,7 @@ function render() {
   renderContent();
   document.querySelectorAll('.bwp-mes-btn').forEach(b => b.classList.remove('bwp-mes-active'));
   document.querySelectorAll('.bwp-mes-btn').forEach((b, i) => {
-    if (BWP.ciclos[i] && BWP.ciclos[i].id === activeMes) b.classList.add('bwp-mes-active');
+    if (PLAN2T.ciclos[i] && PLAN2T.ciclos[i].id === activeMes) b.classList.add('bwp-mes-active');
   });
 }
 
