@@ -2484,10 +2484,6 @@ function applyRM(items, rmStr) {
 function render() {
   renderMeses();
   renderContent();
-  document.querySelectorAll('.bwp-mes-btn').forEach(b => b.classList.remove('bwp-mes-active'));
-  document.querySelectorAll('.bwp-mes-btn').forEach((b, i) => {
-    if (PLAN2T.ciclos[i] && PLAN2T.ciclos[i].id === activeMes) b.classList.add('bwp-mes-active');
-  });
 }
 
 window.addEventListener('DOMContentLoaded', () => { render(); });

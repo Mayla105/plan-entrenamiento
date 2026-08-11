@@ -59,13 +59,6 @@
   .bwp-day-active { background: var(--surface2) !important; border-color: #444 !important; }
   .bwp-day-active::before { background: var(--green) !important; }
   .bwp-day-placeholder { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 20px; text-align: center; color: var(--muted); font-size: 12px; }
-  .bwp-mes-btn {
-    background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
-    padding: 11px 14px; cursor: pointer; text-align: left; transition: .15s;
-    display: flex; align-items: center; gap: 11px; width: 100%;
-    position: relative; overflow: hidden; user-select: none; margin-bottom: 5px;
-  }
-  .bwp-mes-btn::before { content:""; position:absolute; left:0; top:0; bottom:0; width:3px; background:transparent; transition:background .2s; }
   .bwp-sem-btn {
     background: var(--surface); border: 1px solid var(--border); border-radius: 6px;
     padding: 6px 10px; font-size: 11px; font-weight: 700; color: var(--text2);
@@ -139,8 +132,6 @@
   .note-box strong { color: var(--green); }
   .note-warn { background: rgba(245,200,66,.04); border-color: rgba(245,200,66,.15); }
   .note-warn strong { color: var(--yellow); }
-  .note-red { background: rgba(255,95,95,.04); border-color: rgba(255,95,95,.15); }
-  .note-red strong { color: var(--red); }
   .ses-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--blue); margin: 14px 0 8px; }
   .ciclo-dropdown { position: relative; width: 100%; margin-bottom: 12px; }
   .ciclo-dropdown-btn {
@@ -170,11 +161,11 @@
   .ciclo-option .day-btn-name { font-family:'Bebas Neue',sans-serif; font-size:15px; letter-spacing:1px; color:var(--text); line-height:1; margin-bottom:1px; }
   .ciclo-option .day-btn-sub { font-size:11px; color:var(--text2); }
   .bwp-wrap { padding: 24px 28px; }
-  .bwp-grid { display: grid; grid-template-columns: 220px 1fr; gap: 20px; align-items: start; }
+  .bwp-grid { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 20px; align-items: start; }
   .bwp-sidebar-aside { position: sticky; top: 24px; }
   @media (max-width: 700px) {
     .bwp-wrap { padding: 16px; }
-    .bwp-grid { grid-template-columns: 1fr; gap: 12px; }
+    .bwp-grid { grid-template-columns: minmax(0, 1fr); gap: 12px; }
     .bwp-sidebar-aside { position: static; }
     #bwp-sem-btns { flex-direction: column !important; }
     #bwp-day-btns .day-btn { padding: 10px 12px; }
