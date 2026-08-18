@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Kine · Plan de Entrenamiento</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#0f0f0f">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="kine.css">
+</head>
+<body>
+
+<div class="top-bar">
+  <a href="index.html" class="back-btn"><span>←</span> Plan de entrenamiento</a>
+</div>
+
+<div class="header">
+  <h1>Kine</h1>
+  <p class="subtitle">Kinesiología · 2026</p>
+</div>
+
+<div class="bwp-wrap">
+  <div class="bwp-grid">
+    <aside class="bwp-sidebar-aside">
+      <div id="bwp-mes-list"></div>
+    </aside>
+    <div>
+      <div id="bwp-sem-header" style="display:none; margin-bottom:12px;">
+        <div id="bwp-sem-btns" style="display:flex; gap:8px; margin-bottom:16px; flex-wrap:wrap;"></div>
+        <div id="bwp-day-btns" style="display:flex; flex-direction:column; gap:5px; margin-bottom:16px;"></div>
+        <div id="bwp-day-placeholder" class="bwp-day-placeholder" style="display:block;">Seleccioná un día para ver la planificación</div>
+        <div id="bwp-day-content"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── Datos de navegación Kine ──
+const PLAN_KINE = {
+  ciclos: [
+    {
+      id: 'c1', label: 'Ciclo 1', sub: 'S1',
+      semanas: [
+        { id: 'c1s1', label: 'Semana 1', rango: '', vacia: true }
+      ]
+    }
+  ]
+};
+
+const ultimoCiclo = PLAN_KINE.ciclos[PLAN_KINE.ciclos.length - 1];
+let activeMes = ultimoCiclo.id;
+let activeSem = ultimoCiclo.semanas[ultimoCiclo.semanas.length - 1].id;
+let activeDay = null;
+
+function renderMeses() {
+  const list = document.getElementById('bwp-mes-list');
+  const cicloActivo = PLAN_KINE.ciclos.find(c => c.id === activeMes);
+  list.innerHTML = `
+    <div class="ciclo-dropdown" id="ciclo-dropdown">
+      <button class="ciclo-dropdown-btn" id="ciclo-dropdown-btn" onclick="toggleCicloDropdown(event)">
+        <div class="day-dot" style="background:var(--blue); flex-shrink:0;"></div>
+        <div class="day-btn-info">
+          <div class="day-btn-name">${cicloActivo ? cicloActivo.label : '—'}</div>
+          <div class="day-btn-sub">${cicloActivo ? cicloActivo.sub : ''}</div>
+        </div>
+        <span class="ciclo-chevron">▼</span>
+      </button>
+      <div class="ciclo-dropdown-panel" id="ciclo-dropdown-panel">
+        ${PLAN_KINE.ciclos.map(ciclo => `
+          <button class="ciclo-option ${ciclo.id === activeMes ? 'active' : ''}"
+            onclick="selectCiclo('${ciclo.id}', event)">
+            <div class="day-dot" style="background:var(--blue); flex-shrink:0;"></div>
+            <div class="day-btn-info">
+              <div class="day-btn-name">${ciclo.label}</div>
+              <div class="day-btn-sub">${ciclo.sub}</div>
+            </div>
+          </button>`).join('')}
+      </div>
+    </div>`;
+}
+
+function toggleCicloDropdown(e) {
+  if (e) e.stopPropagation();
+  const btn = document.getElementById('ciclo-dropdown-btn');
+  const panel = document.getElementById('ciclo-dropdown-panel');
+  if (!btn || !panel) return;
+  const isOpen = panel.classList.contains('open');
+  btn.classList.toggle('open', !isOpen);
+  panel.classList.toggle('open', !isOpen);
+}
+
+function selectCiclo(id, e) {
+  if (e) e.stopPropagation();
+  activeMes = id;
+  const ciclo = PLAN_KINE.ciclos.find(c => c.id === id);
+  activeSem = ciclo.semanas[0].id;
+  activeDay = null;
+  const btn = document.getElementById('ciclo-dropdown-btn');
+  const panel = document.getElementById('ciclo-dropdown-panel');
+  if (btn) btn.classList.remove('open');
+  if (panel) panel.classList.remove('open');
+  render();
+}
+
+document.addEventListener('click', function() {
+  const btn = document.getElementById('ciclo-dropdown-btn');
+  const panel = document.getElementById('ciclo-dropdown-panel');
+  if (btn) btn.classList.remove('open');
+  if (panel) panel.classList.remove('open');
+});
+
+function renderContent() {
+  const mes = PLAN_KINE.ciclos.find(m => m.id === activeMes);
+  if (!mes) return;
+
+  const semHeader = document.getElementById('bwp-sem-header');
+  semHeader.style.display = 'block';
+
+  const semBtns = document.getElementById('bwp-sem-btns');
+  semBtns.innerHTML = '';
+  mes.semanas.forEach(sem => {
+    const btn = document.createElement('button');
+    btn.className = 'bwp-sem-btn' + (sem.vacia ? ' bwp-sem-empty' : '') + (activeSem === sem.id ? ' bwp-sem-active' : '');
+    btn.textContent = sem.rango ? `${sem.label} · ${sem.rango}` : sem.label;
+    if (!sem.vacia) {
+      btn.onclick = () => { activeSem = sem.id; activeDay = null; render(); };
+    }
+    semBtns.appendChild(btn);
+  });
+
+  const sem = mes.semanas.find(s => s.id === activeSem);
+  const dayBtns = document.getElementById('bwp-day-btns');
+  const placeholder = document.getElementById('bwp-day-placeholder');
+  const dayContent = document.getElementById('bwp-day-content');
+  dayBtns.innerHTML = '';
+  dayContent.innerHTML = '';
+
+  if (!sem || sem.vacia) {
+    placeholder.style.display = 'block';
+    placeholder.innerHTML = 'El contenido se agregará cuando esté disponible.';
+    return;
+  }
+
+  sem.dias.forEach(dia => {
+    const btn = document.createElement('button');
+    btn.className = 'day-btn' + (activeDay === dia.id ? ' bwp-day-active' : '');
+    const pips = dia.carga === 'high'
+      ? '<div class="pip on-high"></div><div class="pip on-high"></div><div class="pip on-high"></div>'
+      : dia.carga === 'high-med'
+      ? '<div class="pip on-high"></div><div class="pip on-high"></div><div class="pip on-med"></div>'
+      : dia.carga === 'off'
+      ? '<div class="pip"></div><div class="pip"></div><div class="pip"></div>'
+      : '<div class="pip on-med"></div><div class="pip on-med"></div><div class="pip on-med"></div>';
+    btn.innerHTML = `
+      <div class="day-dot" style="background:var(--blue);"></div>
+      <div class="day-btn-info">
+        <div class="day-btn-name">${dia.label}</div>
+        <div class="day-btn-sub">${dia.sub}</div>
+      </div>
+      <div class="load-pips">${pips}</div>`;
+    btn.onclick = () => { activeDay = dia.id; render(); };
+    dayBtns.appendChild(btn);
+  });
+
+  if (!activeDay) {
+    placeholder.style.display = 'block';
+    placeholder.innerHTML = 'Seleccioná un día para ver la planificación';
+    return;
+  }
+
+  placeholder.style.display = 'none';
+  const dia = sem.dias.find(d => d.id === activeDay);
+  if (dia) {
+    const tpl = document.getElementById(dia.contenido);
+    if (tpl) {
+      dayContent.innerHTML = tpl.innerHTML;
+      initRMCalculators(dayContent);
+    }
+  }
+}
+
+function initRMCalculators(container) {
+  const wraps = container.querySelectorAll('.complex-wrap');
+  wraps.forEach(wrap => {
+    const items = wrap.querySelectorAll('.c-item-reps');
+    let hasPct = false;
+    items.forEach(el => { if (/\d+([.,]\d+)?%/.test(el.textContent)) hasPct = true; });
+    if (!hasPct) return;
+
+    items.forEach(el => { if (!el.dataset.orig) el.dataset.orig = el.textContent; });
+
+    const block = wrap.closest('details');
+    const titleEl = block ? block.querySelector('.block-title') : null;
+    const title = titleEl ? titleEl.textContent.trim() : 'RM';
+    const key = 'rm_kine_' + title.replace(/\s+/g, '_');
+
+    const bar = document.createElement('div');
+    bar.className = 'rm-bar';
+    bar.innerHTML = `<label>RM (kg)</label><input type="number" step="0.5" min="0" placeholder="0" class="rm-input"><button type="button" class="rm-clear">borrar</button>`;
+    wrap.parentElement.insertBefore(bar, wrap);
+
+    const input = bar.querySelector('.rm-input');
+    const clearBtn = bar.querySelector('.rm-clear');
+
+    const saved = localStorage.getItem(key);
+    if (saved) { input.value = saved; applyRM(items, saved); }
+
+    input.addEventListener('input', () => {
+      if (input.value) localStorage.setItem(key, input.value); else localStorage.removeItem(key);
+      applyRM(items, input.value);
+    });
+
+    clearBtn.addEventListener('click', () => {
+      input.value = '';
+      localStorage.removeItem(key);
+      applyRM(items, '');
+    });
+  });
+}
+
+function applyRM(items, rmStr) {
+  const rm = parseFloat(rmStr);
+  items.forEach(el => {
+    const orig = el.dataset.orig;
+    if (!rm || rm <= 0) { el.innerHTML = orig; return; }
+    el.innerHTML = orig.replace(/(\d+(?:[.,]\d+)?)%/g, (m, pctStr) => {
+      const pct = parseFloat(pctStr.replace(',', '.'));
+      const kg = Math.round((rm * pct / 100) * 2) / 2;
+      return `${m} <span class="c-item-kg">(${kg}kg)</span>`;
+    });
+  });
+}
+
+function render() {
+  renderMeses();
+  renderContent();
+}
+
+window.addEventListener('DOMContentLoaded', () => { render(); });
+</script>
+</body>
+</html>
