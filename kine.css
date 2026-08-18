@@ -170,3 +170,6 @@
     #bwp-sem-btns { flex-direction: column !important; }
     #bwp-day-btns .day-btn { padding: 10px 12px; }
   }
+
+  .video-link { display:inline-flex; align-items:center; gap:3px; color:var(--blue); font-size:11px; font-weight:600; text-decoration:none; opacity:.7; }
+  .video-link:hover { opacity:1; text-decoration:underline; }
