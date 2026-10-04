@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Musculación · Plan de Entrenamiento</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#0f0f0f">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="musculacion.css">
+<style>
+.bp{
+  --bp-bg:#10161C;
+  --bp-surface:#182029;
+  --bp-ink:#E5EBF0;
+  --bp-muted:#93A1AD;
+  --bp-line:#2B3641;
+  --bp-accent:#56BAC4;
+  --bp-on-accent:#08262A;
+  --bp-accent-soft:#16383D;
+  --bp-warn:#F08C68;
+  --bp-warn-soft:#3A211A;
+  --bp-sticky-top:0px;
+  --bp-display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --bp-body:"Barlow","Segoe UI",system-ui,sans-serif;
+
+  background:var(--bp-bg);color:var(--bp-ink);font-family:var(--bp-body);font-size:1rem;line-height:1.5;text-align:left;
+  max-width:44rem;margin-inline:auto;padding:1.75rem 1.125rem 3rem;display:flex;flex-direction:column;gap:2.25rem;
+}
+.bp,.bp *{box-sizing:border-box}
+.bp p{margin:0}
+.bp ul,.bp ol{margin:0;padding:0;list-style:none}
+.bp .bp-title,.bp .bp-h,.bp .bp-dayname{font-family:var(--bp-display);font-weight:700;line-height:1.05;margin:0;text-wrap:balance;letter-spacing:.01em;color:var(--bp-ink)}
+.bp .bp-title{font-size:clamp(2.6rem,11vw,4rem);text-transform:uppercase}
+.bp .bp-h{font-size:1.75rem;text-transform:uppercase}
+.bp .bp-dayname{font-size:1.5rem}
+.bp .bp-eyebrow{font-family:var(--bp-display);font-weight:600;font-size:.95rem;letter-spacing:.12em;text-transform:uppercase;color:var(--bp-accent)}
+.bp .bp-muted{color:var(--bp-muted)}
+.bp .bp-top{display:flex;flex-direction:column;gap:.6rem}
+.bp .bp-top p{max-width:34rem}
+
+.bp .bp-bar{position:sticky;top:calc(var(--bp-sticky-top) + env(safe-area-inset-top,0px));z-index:5;background:var(--bp-bg);border-bottom:1px solid var(--bp-line);padding-block:.6rem;display:flex;flex-direction:column;gap:.5rem}
+.bp .bp-bar-row{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}
+.bp .bp-bar-label{font-family:var(--bp-display);font-weight:600;letter-spacing:.1em;text-transform:uppercase;font-size:.85rem;color:var(--bp-muted);min-width:4.2rem}
+.bp .bp-seg{display:flex;border:1px solid var(--bp-line);border-radius:6px;overflow:hidden;background:var(--bp-surface)}
+.bp .bp-seg input{position:absolute;opacity:0;pointer-events:none}
+.bp .bp-seg label{font-family:var(--bp-display);font-weight:700;font-size:1.1rem;padding:.2rem .95rem;cursor:pointer;border-right:1px solid var(--bp-line);font-variant-numeric:tabular-nums;color:var(--bp-ink)}
+.bp .bp-seg label:last-of-type{border-right:0}
+.bp .bp-seg input:checked + label{background:var(--bp-accent);color:var(--bp-on-accent)}
+.bp .bp-seg input:focus-visible + label{outline:2px solid var(--bp-ink);outline-offset:-2px}
+.bp .bp-days{display:flex;gap:.35rem;flex-wrap:wrap}
+.bp .bp-days a{font-family:var(--bp-display);font-weight:600;font-size:1rem;color:var(--bp-ink);text-decoration:none;padding:.15rem .6rem;border:1px solid var(--bp-line);border-radius:6px;background:var(--bp-surface)}
+.bp .bp-days a:hover{border-color:var(--bp-accent);color:var(--bp-accent)}
+.bp .bp-days a:focus-visible{outline:2px solid var(--bp-accent);outline-offset:2px}
+.bp .bp-week-note{font-size:.95rem;color:var(--bp-muted)}
+.bp .bp-week-note b{color:var(--bp-ink);font-weight:600}
+
+.bp .bp-sec{display:flex;flex-direction:column;gap:.9rem;scroll-margin-top:calc(var(--bp-sticky-top) + 12.5rem)}
+
+.bp .bp-scale{display:grid;grid-template-columns:repeat(11,1fr);gap:3px;font-family:var(--bp-display);font-weight:700;font-size:1.05rem;font-variant-numeric:tabular-nums}
+.bp .bp-scale span{text-align:center;padding:.3rem 0;border-radius:3px;background:var(--bp-warn-soft);color:var(--bp-warn)}
+.bp .bp-scale span.bp-ok{background:var(--bp-accent);color:var(--bp-on-accent)}
+.bp .bp-scale-key{display:flex;justify-content:space-between;gap:1rem;font-size:.85rem;color:var(--bp-muted)}
+.bp .bp-rules{display:flex;flex-direction:column;gap:.5rem}
+.bp .bp-rules li{padding-left:1rem;position:relative}
+.bp .bp-rules li::before{content:"";position:absolute;left:0;top:.62em;width:.4rem;height:2px;background:var(--bp-accent)}
+.bp .bp-out{border:1px solid var(--bp-warn);border-radius:8px;padding:.9rem 1rem;display:flex;flex-direction:column;gap:.6rem;background:var(--bp-surface)}
+.bp .bp-out .bp-eyebrow{color:var(--bp-warn)}
+.bp .bp-chips{display:flex;flex-wrap:wrap;gap:.35rem}
+.bp .bp-chips li{font-size:.9rem;padding:.15rem .55rem;border-radius:4px;background:var(--bp-warn-soft);color:var(--bp-warn);font-weight:500}
+
+.bp .bp-day{border-top:3px solid var(--bp-ink);padding-top:.8rem}
+.bp .bp-day-head{display:flex;flex-direction:column;gap:.15rem}
+.bp .bp-ex-list{display:flex;flex-direction:column}
+.bp .bp-ex{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.25rem 1rem;align-items:baseline;padding:.6rem 0;border-bottom:1px solid var(--bp-line)}
+.bp .bp-ex-name{font-weight:600;min-width:0}
+.bp .bp-ex-note{display:block;font-weight:400;font-size:.9rem;color:var(--bp-muted)}
+.bp .bp-dose{font-family:var(--bp-display);font-weight:700;font-size:1.45rem;line-height:1.1;text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.bp .bp-dose small{display:block;font-family:var(--bp-body);font-weight:400;font-size:.8rem;color:var(--bp-muted)}
+.bp .bp-sets.bp-cut{color:var(--bp-accent)}
+.bp .bp-wait{display:none;font-size:.8rem;font-weight:600;color:var(--bp-warn);background:var(--bp-warn-soft);border-radius:4px;padding:.05rem .4rem;margin-left:.35rem;white-space:nowrap}
+.bp .bp-ex.bp-later .bp-wait{display:inline-block}
+.bp .bp-ex.bp-later .bp-dose{opacity:.4}
+.bp .bp-callout{border-left:3px solid var(--bp-accent);padding:.1rem 0 .1rem .8rem;color:var(--bp-muted);font-size:.95rem}
+.bp .bp-emom{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.4rem}
+.bp .bp-emom li{background:var(--bp-accent-soft);border-radius:6px;padding:.45rem .65rem;display:flex;justify-content:space-between;gap:.5rem;align-items:baseline}
+.bp .bp-emom li b{font-family:var(--bp-display);font-size:1.2rem;white-space:nowrap}
+@media (max-width:26rem){.bp .bp-emom{grid-template-columns:1fr}}
+
+.bp .bp-ladder{counter-reset:bp-step;display:flex;flex-direction:column}
+.bp .bp-ladder li{counter-increment:bp-step;display:grid;grid-template-columns:2rem minmax(0,1fr);align-items:baseline;padding:.45rem 0;border-bottom:1px solid var(--bp-line);font-weight:500}
+.bp .bp-ladder li::before{content:counter(bp-step);font-family:var(--bp-display);font-weight:700;font-size:1.3rem;color:var(--bp-accent)}
+.bp .bp-foot{border-top:1px solid var(--bp-line);padding-top:1rem;font-size:.95rem;color:var(--bp-muted)}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <a href="index.html" class="back-btn"><span>←</span> Plan de entrenamiento</a>
+</div>
+
+<div class="header">
+  <h1>Musculación</h1>
+  <p class="subtitle">Bloque Puente · 2026</p>
+</div>
+
+<div class="bp" id="bloque-puente">
+  <div class="bp-top">
+    <p class="bp-eyebrow">Musculación 5 días + zona 2 en contraturno</p>
+    <h2 class="bp-title">Bloque puente</h2>
+    <p class="bp-muted">Cuatro semanas para sostener fuerza y tolerancia al volumen mientras se recupera la subluxación costocondral, sin empuje vertical ni rotación, y cuidando las hernias.</p>
+  </div>
+
+  <div class="bp-bar">
+    <div class="bp-bar-row">
+      <span class="bp-bar-label" id="bp-sem-label">Semana</span>
+      <div class="bp-seg" role="radiogroup" aria-labelledby="bp-sem-label">
+        <input type="radio" name="bp-semana" id="bp-sem-1" value="1" checked><label for="bp-sem-1">1</label>
+        <input type="radio" name="bp-semana" id="bp-sem-2" value="2"><label for="bp-sem-2">2</label>
+        <input type="radio" name="bp-semana" id="bp-sem-3" value="3"><label for="bp-sem-3">3</label>
+        <input type="radio" name="bp-semana" id="bp-sem-4" value="4"><label for="bp-sem-4">4</label>
+      </div>
+    </div>
+    <nav class="bp-days" aria-label="Días">
+      <a href="#bp-reglas">Reglas</a>
+      <a href="#bp-dia-1">Día 1</a>
+      <a href="#bp-dia-2">Día 2</a>
+      <a href="#bp-dia-3">Día 3</a>
+      <a href="#bp-dia-4">Día 4</a>
+      <a href="#bp-dia-5">Día 5</a>
+      <a href="#bp-zona-2">Zona 2</a>
+      <a href="#bp-vuelta">Vuelta</a>
+    </nav>
+    <p class="bp-week-note" id="bp-nota-semana"><b>Semana 1.</b> Elegí cargas que te dejen 2 a 3 repeticiones en reserva. El press de pecho todavía no entra.</p>
+  </div>
+
+  <section class="bp-sec" id="bp-reglas">
+    <h3 class="bp-h">Reglas del bloque</h3>
+    <div>
+      <div class="bp-scale" aria-label="Escala de dolor de 0 a 10, tope en 3">
+        <span class="bp-ok">0</span><span class="bp-ok">1</span><span class="bp-ok">2</span><span class="bp-ok">3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
+      </div>
+    </div>
+    <div class="bp-scale-key"><span>Dolor hasta 3/10: seguís</span><span>4 o más: cortás ese ejercicio</span></div>
+    <ul class="bp-rules">
+      <li>Que no quedes peor al día siguiente. Si pasa, bajá carga o sacá el ejercicio que lo provocó.</li>
+      <li>Puntada o chasquido en la costilla: se corta ese ejercicio en el momento.</li>
+      <li>RPE 7 a 8, exhalando en el esfuerzo. Sin Valsalva máximo y sin llegar al fallo.</li>
+      <li>Búlgaras y zancadas siempre con dos mancuernas iguales, nunca carga de un solo lado.</li>
+    </ul>
+    <div class="bp-out">
+      <p class="bp-eyebrow">Afuera por ahora</p>
+      <ul class="bp-chips">
+        <li>Press de hombro, push press y jerk</li>
+        <li>Rotaciones con carga</li>
+        <li>Remo unilateral</li>
+        <li>Plancha lateral</li>
+        <li>Colgarse y kipping</li>
+        <li>Fondos</li>
+        <li>Flexiones</li>
+        <li>Banca pesada</li>
+        <li>Abdominales con flexión</li>
+        <li>Remo con pecho apoyado</li>
+        <li>Goblet y front rack</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="bp-sec bp-day" id="bp-dia-1">
+    <div class="bp-day-head"><p class="bp-eyebrow">Día 1</p><h4 class="bp-dayname">Pierna fuerza, foco cuádriceps</h4></div>
+    <ul class="bp-ex-list">
+      <li class="bp-ex"><span class="bp-ex-name">Hack o prensa</span><span class="bp-dose"><span class="bp-sets" data-sets="4">4</span>×5–6</span></li>
+      <li class="bp-ex"><span class="bp-ex-name">Sentadilla búlgara<span class="bp-ex-note">Dos mancuernas iguales, a los costados</span></span><span class="bp-dose"><span class="bp-sets" data-sets="3">3</span>×8<small>por lado</small></span></li>
+      <li class="bp-ex"><span class="bp-ex-name">Extensión de cuádriceps</span><span class="bp-dose"><span class="bp-sets" data-sets="3">3</span>×12–15</span></li>
+      <li class="bp-ex"><span class="bp-ex-name">Curl femoral sentado</span><span class="bp-dose"><span class="bp-sets" data-sets="3">3</span>×10–12</span></li>
+      <li class="bp-ex"><span class="bp-ex-name">Gemelos</span><span class="bp-dose"><span class="bp-sets" data-sets="3">3</span>×12–15</span></li>
+      <li class="bp-ex"><span class="bp-ex-name">Dead bug</span><span class="bp-dose"><span class="bp-sets" data-sets="3">3</span>×8<small>por lado</small></span></li>
+    </ul>
+  </section>
+
+  <section class="bp-sec bp-day" id="bp-dia-2">
+    <div class="bp-day-head"><p class="bp-eyebrow">Día 2</p><h4 class="bp-dayname">Tracción y hombros</h4></div>
+    <ul class="bp-ex-list">
+      <li class="bp-ex"><span class="bp-ex-name">Remo en polea sentada<span class="bp-ex-note">A dos manos, torso erguido</span></span><span class="bp-dose"><span class="bp-sets" data-sets="4">4</span>×8–10</span></li>
+      <li class="bp-ex"><span class="bp-ex-name">Jalón agarre neutro<span class="bp-ex-note">Liviano y de prueba. Si arriba se te abren las costillas o molesta, cambialo por remo alto en polea</span></span><span class="bp-dose"><span class="bp-sets" data-sets="3">3</span>×10</span></li>
+      <li class="bp-ex"><span class="bp-ex-name">Face pull</span><span class="bp-dose"><span class="bp-sets" data-sets="3">3</span>×15</span></li>
+      <li class="bp-ex"><span class="bp-ex-name">Vuelos laterales<span class="bp-ex-note">Hasta la altura del hombro, no más</span></span><span class="bp-dose"><span class="bp-sets" data-sets="4">4</span>×12–15</span></li>
+      <li class="bp-ex"><span class="bp-ex-name">Bíceps</span><span class="bp-dose"><span class="bp-sets" data-sets="3">3</span>×10–12</span></li>
+      <li class="bp-ex"><span class="bp-ex-name">Tríceps en polea<span class="bp-ex-note">Codos pegados al cuerpo</span></span><span class="bp-dose"><span class="bp-sets" data-sets="3">3</span>×12–15</span></li>
+    </ul>
+  </section>
+
+  <section class="bp-sec bp-day" id="bp-dia-3">
+    <div class="bp-day-head"><p class="bp-eyebrow">Día 3</p><h4 class="bp-dayname">Volumen de piernas, por densidad</h4></div>
+    <ul class="bp-ex-list">
+      <li class="bp-ex"><span class="bp-ex-name">Arrastre de trineo hacia atrás</span><span class="bp-dose"><span class="bp-sets" data-sets="8">8</span>×20 m</span></li>
+      <li class="bp-ex"><span class="bp-ex-name">EMOM rotando las cuatro estaciones<span class="bp-ex-note"><span id="bp-emom-vueltas">5</span> vueltas completas</span></span><span class="bp-dose"><span id="bp-emom-min">20</span>'</span></li>
+    </ul>
+    <ul class="bp-emom">
+      <li><span>Prensa</span><b>×15</b></li>
+      <li><span>Curl femoral</span><b>×15</b></li>
+      <li><span>Step-up</span><b>×10 por lado</b></li>
+      <li><span>Hip thrust</span><b>×15</b></li>
+    </ul>
+    <p class="bp-callout">Tienen que quemarte las piernas, no faltarte el aire. La ventilación fuerte es lo que más mueve la parrilla costal, así que elegí cargas que te dejen terminar cada minuto con descanso.</p>
+  </section>
+
+  <section class="bp-sec bp-day" id="bp-dia-4">
+    <div class="bp-day-head"><p class="bp-eyebrow">Día 4</p><h4 class="bp-dayname">Tren superior</h4></div>
+    <ul class="bp-ex-list">
+      <li class="bp-ex"><span class="bp-ex-name">Remo en polea, agarre ancho</span><span class="bp-dose"><span class="bp-sets" data-sets="4">4</span>×8–10</span></li>
+      <li class="bp-ex bp-later" data-desde="2"><span class="bp-ex-name">Press de pecho en máquina<span class="bp-wait">desde la semana 2</span><span class="bp-ex-note">Rango corto y liviano, de prueba</span></span><span class="bp-dose"><span class="bp-sets" data-sets="3">3</span>×10</span></li>
+      <li class="bp-ex"><span class="bp-ex-name">Vuelo posterior en polea</span><span class="bp-dose"><span class="bp-sets" data-sets="3">3</span>×15</span></li>
+      <li class="bp-ex"><span class="bp-ex-name">Vuelo frontal<span class="bp-ex-note">Hasta la altura del hombro</span></span><span class="bp-dose"><span class="bp-sets" data-sets="2">2</span>×12</span></li>
+      <li class="bp-ex"><span class="bp-ex-name">Vuelos laterales en polea</span><span class="bp-dose"><span class="bp-sets" data-sets="3">3</span>×12–15</span></li>
+      <li class="bp-ex"><span class="bp-ex-name">Bíceps</span><span class="bp-dose"><span class="bp-sets" data-sets="3">3</span>×12</span></li>
+      <li class="bp-ex"><span class="bp-ex-name">Tríceps</span><span class="bp-dose"><span class="bp-sets" data-sets="3">3</span>×12</span></li>
+    </ul>
+  </section>
+
+  <section class="bp-sec bp-day" id="bp-dia-5">
+    <div class="bp-day-head"><p class="bp-eyebrow">Día 5</p><h4 class="bp-dayname">Cadena posterior y glúteo</h4></div>
+    <ul class="bp-ex-list">
+      <li class="bp-ex"><span class="bp-ex-name">Hip thrust</span><span class="bp-dose"><span class="bp-sets" data-sets="4">4</span>×6–8</span></li>
+      <li class="bp-ex"><span class="bp-ex-name">Peso muerto rumano con mancuernas</span><span class="bp-dose"><span class="bp-sets" data-sets="3">3</span>×8–10</span></li>
+      <li class="bp-ex"><span class="bp-ex-name">Zancadas caminando<span class="bp-ex-note">Dos mancuernas iguales</span></span><span class="bp-dose"><span class="bp-sets" data-sets="3">3</span>×10<small>por lado</small></span></li>
+      <li class="bp-ex"><span class="bp-ex-name">Abducción en máquina</span><span class="bp-dose"><span class="bp-sets" data-sets="3">3</span>×15</span></li>
+      <li class="bp-ex"><span class="bp-ex-name">Dead bug o plancha frontal corta<span class="bp-ex-note">Dead bug 8 por lado, o plancha de 20 segundos</span></span><span class="bp-dose"><span class="bp-sets" data-sets="3">3</span>×8<small>o ×20"</small></span></li>
+    </ul>
+  </section>
+
+  <section class="bp-sec bp-day" id="bp-zona-2">
+    <div class="bp-day-head"><p class="bp-eyebrow">Contraturno</p><h4 class="bp-dayname">Zona 2</h4></div>
+    <ul class="bp-ex-list">
+      <li class="bp-ex"><span class="bp-ex-name">Bici fija<span class="bp-ex-note">Sin rotación de tronco. Ritmo al que podés hablar en frases completas</span></span><span class="bp-dose">30–45'</span></li>
+      <li class="bp-ex"><span class="bp-ex-name">Frecuencia<span class="bp-ex-note">Arrancá con 3 o 4 y subí a 5 si la costilla no se queja</span></span><span class="bp-dose">3–5<small>sesiones por semana</small></span></li>
+    </ul>
+    <p class="bp-callout">Evitá remo, ski erg y assault bike con brazos.</p>
+  </section>
+
+  <section class="bp-sec" id="bp-progresion">
+    <h3 class="bp-h">Progresión</h3>
+    <ul class="bp-rules">
+      <li><b>Semanas 1 a 3.</b> Primero sumás repeticiones dentro del rango. Cuando llegás al tope en todas las series, subís carga.</li>
+      <li><b>EMOM del día 3.</b> 20 minutos, después 24, después 28.</li>
+      <li><b>Semana 4, descarga.</b> Mismas cargas, la mitad de las series, y el EMOM baja a 12 minutos.</li>
+    </ul>
+  </section>
+
+  <section class="bp-sec" id="bp-vuelta">
+    <h3 class="bp-h">Vuelta al empuje vertical</h3>
+    <p>Arranca cuando rotar y respirar profundo no duelan en el día a día y tu kinesiólogo dé el ok. Una o dos semanas por escalón, con dolor máximo 2/10.</p>
+    <ol class="bp-ladder">
+      <li>Landmine press a dos manos</li>
+      <li>Press de hombro en máquina</li>
+      <li>Press con mancuernas, sentada</li>
+      <li>Press con barra</li>
+      <li>Push press</li>
+      <li>Jerk</li>
+    </ol>
+    <p class="bp-muted">Mientras tanto, los vuelos, el face pull y el tríceps sostienen deltoides, estabilidad escapular y extensión de codo, que es lo que más rápido se pierde para el overhead.</p>
+  </section>
+
+  <p class="bp-foot">Mostráselo a tu kinesiólogo antes de arrancar. Los empujes y el jalón dependen de cómo esté la costilla ese día.</p>
+</div>
+
+<script>
+(function(){
+  var root = document.getElementById("bloque-puente");
+  if (!root) return;
+  var CLAVE = "bp-semana";
+  var notas = {
+    1: "Elegí cargas que te dejen 2 a 3 repeticiones en reserva. El press de pecho todavía no entra.",
+    2: "Misma carga, más repeticiones dentro del rango. Empezás a probar el press de pecho. EMOM de 24 minutos.",
+    3: "Si llegaste al tope del rango, subí carga. EMOM de 28 minutos.",
+    4: "Descarga. Mismas cargas, mitad de series, EMOM de 12 minutos."
+  };
+  var emom = {1:[20,5], 2:[24,6], 3:[28,7], 4:[12,3]};
+  var nota = root.querySelector("#bp-nota-semana");
+  var radios = root.querySelectorAll('input[name="bp-semana"]');
+
+  function aplicar(s){
+    root.querySelectorAll("[data-sets]").forEach(function(el){
+      var n = Number(el.dataset.sets);
+      el.textContent = s === 4 ? Math.ceil(n / 2) : n;
+      el.classList.toggle("bp-cut", s === 4);
+    });
+    root.querySelectorAll("[data-desde]").forEach(function(li){
+      li.classList.toggle("bp-later", s < Number(li.dataset.desde));
+    });
+    root.querySelector("#bp-emom-min").textContent = emom[s][0];
+    root.querySelector("#bp-emom-vueltas").textContent = emom[s][1];
+    nota.textContent = "";
+    var b = document.createElement("b");
+    b.textContent = "Semana " + s + ". ";
+    nota.appendChild(b);
+    nota.appendChild(document.createTextNode(notas[s]));
+  }
+
+  radios.forEach(function(r){
+    r.addEventListener("change", function(){
+      var s = Number(r.value);
+      aplicar(s);
+      try { localStorage.setItem(CLAVE, String(s)); } catch (e) {}
+    });
+  });
+
+  var guardada = null;
+  try { guardada = Number(localStorage.getItem(CLAVE)); } catch (e) {}
+  if (guardada >= 1 && guardada <= 4) {
+    var r = root.querySelector("#bp-sem-" + guardada);
+    if (r) { r.checked = true; aplicar(guardada); }
+  }
+})();
+</script>
+
+</body>
+</html>
