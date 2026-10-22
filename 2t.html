@@ -6478,7 +6478,7 @@ const PLAN2T = {
         }
       ]
     },
-    { id: 'c3', label: 'Ciclo 3', sub: 'S1 · S2 · S3 · S4 · S5',
+    { id: 'c3', label: 'Ciclo 3', sub: 'S1 · S2 · S3 · S4 · S5 · S6 · S7',
       semanas: [
         { id: 'c3s1', label: 'Semana 1', sub: 'S1', rango: '7 – 12 Sep',
           dias: [
@@ -6521,6 +6521,34 @@ const PLAN2T = {
             { id: 'c3s4jue', label: 'Jueves 1/10', sub: 'Descanso Activo Opcional · Zona 2 · 40–50 min', carga: 'low', contenido: 't-c3s4jue-content' },
             { id: 'c3s4vie', label: 'Viernes 2/10', sub: 'Snatch Pull + Squat Snatch Descarga + Front Squat Descarga + HSPU Max + Metcon For Time', carga: 'medium', contenido: 't-c3s4vie-content' },
             { id: 'c3s4sab', label: 'Sábado 3/10', sub: 'Competición Individual / Dupla / Cuarteto · HSPU + T2B + DU + Worm', carga: 'high', contenido: 't-c3s4sab-content' },
+          ]
+        },
+        {
+          id: 'c3s5', label: 'Semana 9', rango: '5 – 11 Octubre · Competencia',
+          dias: [
+            { id: 'c3s5lun', label: 'Lunes 5/10', sub: 'EMOM 20 Snatch + Back Squat 6RM + 2 Metcons', carga: 'high', contenido: 't-c3s5lun-content' },
+            { id: 'c3s5mar', label: 'Martes 6/10', sub: 'Push Press Olas + Capacidad Aeróbica en 3 bloques', carga: 'high', contenido: 't-c3s5mar-content' },
+            { id: 'c3s5mie', label: 'Miércoles 7/10', sub: 'Fuerza Mixta + Habilidad Gimnástica + Metcon 2 Rondas', carga: 'high', contenido: 't-c3s5mie-content' },
+            { id: 'c3s5jue', label: 'Jueves 8/10', sub: 'Descanso Activo · Zona 2 · 45–50 min', carga: 'medium', contenido: 't-c3s5jue-content' },
+            { id: 'c3s5vie', label: 'Viernes 9/10', sub: 'EMOM 20 Clean + Back Squat 4x6 + Acond. Mixto + Metcon 5 Rondas', carga: 'high', contenido: 't-c3s5vie-content' },
+          ]
+        },
+        {
+          id: 'c3s6', label: 'Semana 10', rango: '12 – 18 Octubre · Rapthor / Tapering',
+          dias: [
+            { id: 'c3s6lun', label: 'Lunes 13/10', sub: 'EMOM 20 Snatch + Front Squat 6RM + WOD 1 Freedom / Rapthor', carga: 'high', contenido: 't-c3s6lun-content' },
+            { id: 'c3s6mar', label: 'Martes 14/10', sub: 'Push Press Olas + Test Aeróbico + WOD 3 Freedom / WOD 2 Rapthor', carga: 'high', contenido: 't-c3s6mar-content' },
+            { id: 'c3s6mie', label: 'Miércoles 15/10', sub: 'Fuerza Mixta + Habilidad Gimnástica + Open 27.2 / Último evento Rapthor', carga: 'high', contenido: 't-c3s6mie-content' },
+            { id: 'c3s6jue', label: 'Jueves 16/10', sub: 'Descanso Activo / Descanso total si competís', carga: 'medium', contenido: 't-c3s6jue-content' },
+            { id: 'c3s6vie', label: 'Viernes 17/10', sub: 'EMOM 20 + Front Squat 4x6 + HSPU Déficit / Activación pre-compe', carga: 'high', contenido: 't-c3s6vie-content' },
+          ]
+        },
+        {
+          id: 'c3s7', label: 'Semana 11', rango: '19 – 25 Octubre',
+          dias: [
+            { id: 'c3s7lun', label: 'Lunes 19/10', sub: 'Snatch Complex pesado + Back Squat 80% + Strongman + Acondicionamiento', carga: 'high', contenido: 't-c3s7lun-content' },
+            { id: 'c3s7mar', label: 'Martes 20/10', sub: 'Acondicionamiento Gimnástico (4 bloques) + Estructura + AMRAP 30', carga: 'high', contenido: 't-c3s7mar-content' },
+            { id: 'c3s7mie', label: 'Miércoles 21/10', sub: 'Potencia + Deadlift 4 pesadas + Yoke + Capacidad de Trabajo', carga: 'high', contenido: 't-c3s7mie-content' },
           ]
         }
       ]
@@ -6719,5 +6747,1675 @@ function render() {
 
 window.addEventListener('DOMContentLoaded', () => { render(); });
 </script>
+
+<template id="t-c3s5lun-content">
+  <div class="plan-header">
+    <div class="plan-day-label" style="color:var(--blue)">Lunes 5/10 · Ciclo 3</div>
+    <div class="plan-title">2T 2026 — Semana 9 · Competencia</div>
+    <div class="plan-tags">
+      <span class="tag tag-oly">EMOM 20 Snatch</span>
+      <span class="tag tag-str">Back Squat 6RM</span>
+      <span class="tag tag-wod">2 Metcons</span>
+      <span class="tag tag-high">Carga Alta</span>
+    </div>
+  </div>
+
+  <div class="note-box note-warn" style="margin:0 0 12px 0;">
+    <strong>Nota general de la semana:</strong> este es nuestro <strong>segundo microciclo</strong> dentro del nuevo mesociclo específico para temporada de competencias. En el primero trabajamos las bases técnicas del levantamiento, con mucho énfasis en fuerza básica y estricta; testeamos movimientos y trabajamos con metcons muy similares a lo que se ve en competencias nacionales e internacionales, con algunos cambios para no reventar el SNC. En esta segunda parte vamos a atravesar el <strong>Open de Freedom y Rapthor</strong>, así que tendrá un enfoque más personalizado hacia la competencia y no tan general. Vamos a encontrar fuerza y levantamiento mezclado con trabajos aeróbicos y de capacidad gimnástica, y <strong>más acondicionamientos que WODs de competencia</strong> — esos los dejamos para los sábados de entrenamiento grupal.
+  </div>
+
+  <div class="sub-label" style="color:var(--green)">Sesión 1</div>
+
+  <details class="block">
+    <summary><span class="block-icon">⚡</span><div><div class="block-title">CALENTAMIENTO</div><div class="block-subtitle">3 Rondas + Pliometría avanzada</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="ex-group-title">3 Rondas</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5 Landmine Sotts Press por lado</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">8 Strict Toes to Rings</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">10 Goblet Lunges</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5 Snatch Pulls</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5 Hang Muscle Snatch</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5 Snatch Balances</span></div>
+      </div>
+      <div class="ex-group">
+        <div class="ex-group-title">Pliometría Avanzada — 4 series</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">4 Depth Jumps to High Box</span><span class="ex-detail">Dejarse caer de un cajón de 30-45 cm, rebotar hacia el cajón más alto posible</span></div>
+      </div>
+    </div>
+  </details>
+
+  <details class="block">
+    <summary><span class="block-icon" style="color:var(--green)">🏋️</span><div><div class="block-title">FUERZA OLÍMPICA · EMOM 20'</div><div class="block-subtitle">Máquina + Snatch alternados</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="ex-group-title">EMOM 20' — repetí todo el ciclo durante los 20'</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">Min 1: 10 / 8 Cal Ski / Row / Bike</span><span class="ex-detail">RPE 8</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">Min 2: 1 Squat Snatch + 2 OHS</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">Min 3: 10 / 8 Cal Ski / Row / Bike</span><span class="ex-detail">RPE 8</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">Min 4: 2 Squat Snatch + 1 OHS</span></div>
+      </div>
+      <div class="ex-group">
+        <div class="complex-wrap"><div class="complex-list">
+          <div class="c-item"><span class="c-item-name">Carga del Snatch</span><span class="c-item-reps" style="color:var(--orange)">75% – 80%</span></div>
+        </div></div>
+      </div>
+    </div>
+  </details>
+
+  <details class="block">
+    <summary><span class="block-icon" style="color:var(--green)">🏋️</span><div><div class="block-title">FUERZA BÁSICA · Back Squat</div><div class="block-subtitle">15' para buscar 6 reps pesadas</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">15' para buscar 6 reps PESADAS</span></div>
+      </div>
+      <div class="note-box" style="margin:0;">Aproximá correctamente, de a poco. <strong>Dejá los pesos pesados para los últimos 5'.</strong></div>
+    </div>
+  </details>
+
+  <details class="wod-block">
+    <summary><span class="block-icon" style="color:var(--blue)">🔁</span><div><div class="block-title">METCON A · Por Tiempo</div><div class="block-subtitle">5 Rondas · Rest 2' entre rondas</div></div><span class="block-chevron">▼</span></summary>
+    <div class="wod-body">
+      <div class="ex-group">
+        <div class="ex-group-title">5 Rondas</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">15 GHD Sit Up</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">2 Squat Clean (singles)</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5 RMU / 7 BMU</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">2 Squat Clean (singles)</span></div>
+      </div>
+      <div class="ex-group">
+        <div class="complex-wrap"><div class="complex-list">
+          <div class="c-item"><span class="c-item-name">Ronda 1</span><span class="c-item-reps" style="color:var(--yellow)">60%</span></div>
+          <div class="c-item"><span class="c-item-name">Subiendo por ronda</span><span class="c-item-reps" style="color:var(--orange)">+5%</span></div>
+        </div></div>
+      </div>
+      <div class="note-box" style="margin:0;"><strong>Rest 2'</strong> entre rondas. Empezá con un 60% en el clean y subí de a un 5% por ronda.</div>
+    </div>
+  </details>
+
+  <details class="wod-block">
+    <summary><span class="block-icon" style="color:var(--blue)">🔁</span><div><div class="block-title">METCON B · Por Tiempo</div><div class="block-subtitle">Double Unders + HSPU + Lunges + HSW</div></div><span class="block-chevron">▼</span></summary>
+    <div class="wod-body">
+      <div class="ex-group">
+        <div class="ex-group-title">Por Tiempo</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">100 Double Unders</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">40 Handstand Push Up</span><span class="ex-detail">Parámetro de Open</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">100 Double Unders</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">40 mts Dual KB Front Rack Walking Lunges</span><span class="ex-detail">2×24 / 16 kg · Scaled 2×20 / 14 kg</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">100 Double Unders</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">40 mts Handstand Walk</span></div>
+      </div>
+    </div>
+  </details>
+
+  <div class="sub-label" style="color:var(--orange)">Sesión 2 — Accesorios (sí o sí en otra sesión)</div>
+
+  <details class="block">
+    <summary><span class="block-icon" style="color:var(--orange)">🧱</span><div><div class="block-title">STRONGMAN · EMOM 15'</div><div class="block-subtitle">Dead Hang + Farmer's + Sandbag</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="ex-group-title">EMOM 15'</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">Min 1: 30'' Dead Hang</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">Min 2: 30'' Max. Distancia Farmer's Carry</span><span class="ex-detail">2×38 / 28 kg · Scaled 2×30 / 22,5 kg</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">Min 3: 30'' Max. Distancia Shoulder Sandbag Carry</span><span class="ex-detail">70 / 50 kg · Scaled 50 / 30 kg</span></div>
+      </div>
+    </div>
+  </details>
+
+  <details class="block">
+    <summary><span class="block-icon" style="color:var(--orange)">💪</span><div><div class="block-title">ACCESORIOS y ESTRUCTURA</div><div class="block-subtitle">4 Súper-series · Rest 1' entre series</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="ex-group-title">4 Súper-series</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">20'' GHD Back Extension Hold con disco</span><span class="ex-detail">RPE 7</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">8/8 Row a 1 brazo con mancuerna</span><span class="ex-detail">RPE 8</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">10 Cuban Press liviano</span></div>
+      </div>
+      <div class="note-box" style="margin:0;"><strong>Rest 1'</strong> entre series.</div>
+    </div>
+  </details>
+</template>
+
+<template id="t-c3s5mar-content">
+  <div class="plan-header">
+    <div class="plan-day-label" style="color:var(--blue)">Martes 6/10 · Ciclo 3</div>
+    <div class="plan-title">2T 2026 — Semana 9 · Competencia</div>
+    <div class="plan-tags">
+      <span class="tag tag-str">Push Press Olas</span>
+      <span class="tag tag-wod">Capacidad Aeróbica</span>
+      <span class="tag tag-high">Carga Alta</span>
+      <span class="tag" style="background:rgba(100,100,100,.15); color:var(--text2);">Sesión Única</span>
+    </div>
+  </div>
+
+  <details class="block">
+    <summary><span class="block-icon">⚡</span><div><div class="block-title">CALENTAMIENTO (15 minutos)</div><div class="block-subtitle">Pliometría avanzada + 3 Rondas</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="ex-group-title">Pliometría Avanzada — 4 series</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5 Plyo Push-ups</span><span class="ex-detail">Con aplauso o despegue</span></div>
+      </div>
+      <div class="ex-group">
+        <div class="ex-group-title">3 Rondas</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5 Inchworms a Yoga Push Up</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5/5 KB Halos a 1 pierna</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">15 Hollow to Arch Rolls</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">15 Press Estricto con barra sola</span></div>
+      </div>
+    </div>
+  </details>
+
+  <details class="block">
+    <summary><span class="block-icon" style="color:var(--green)">🏋️</span><div><div class="block-title">FUERZA BÁSICA · Push Press</div><div class="block-subtitle">2 Olas · Rest 2' entre series y olas</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="ex-group-title">Ola 1</div>
+        <div class="complex-wrap"><div class="complex-list">
+          <div class="c-item"><span class="c-item-name">5 reps</span><span class="c-item-reps" style="color:var(--orange)">70%</span></div>
+          <div class="c-item"><span class="c-item-name">4 reps</span><span class="c-item-reps" style="color:var(--orange)">75%</span></div>
+          <div class="c-item"><span class="c-item-name">3 reps</span><span class="c-item-reps" style="color:var(--red)">80%</span></div>
+        </div></div>
+      </div>
+      <div class="ex-group">
+        <div class="ex-group-title">Ola 2</div>
+        <div class="complex-wrap"><div class="complex-list">
+          <div class="c-item"><span class="c-item-name">5 reps</span><span class="c-item-reps" style="color:var(--orange)">75%</span></div>
+          <div class="c-item"><span class="c-item-name">4 reps</span><span class="c-item-reps" style="color:var(--red)">80%</span></div>
+          <div class="c-item"><span class="c-item-name">3 reps</span><span class="c-item-reps" style="color:var(--red)">85%</span></div>
+        </div></div>
+      </div>
+      <div class="note-box" style="margin:0;"><strong>Rest:</strong> 2' entre series y olas.</div>
+    </div>
+  </details>
+
+  <details class="wod-block">
+    <summary><span class="block-icon" style="color:var(--blue)">🏃</span><div><div class="block-title">CAPACIDAD AERÓBICA · Bloque 1</div><div class="block-subtitle">5 Rondas de Run alternado</div></div><span class="block-chevron">▼</span></summary>
+    <div class="wod-body">
+      <div class="ex-group">
+        <div class="ex-group-title">5 Rondas</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">3' Run</span><span class="ex-detail">RPE 6 · Zona 2</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">1' Run</span><span class="ex-detail">RPE 8-9</span></div>
+      </div>
+    </div>
+  </details>
+
+  <div class="note-box note-warn" style="margin:0 0 12px 0;text-align:center;"><strong>Rest 5'</strong> — hidratación y reposición</div>
+
+  <details class="wod-block">
+    <summary><span class="block-icon" style="color:var(--blue)">🔁</span><div><div class="block-title">CAPACIDAD AERÓBICA · Bloque 2</div><div class="block-subtitle">10 Rondas de sprint · Rest 1'</div></div><span class="block-chevron">▼</span></summary>
+    <div class="wod-body">
+      <div class="ex-group">
+        <div class="ex-group-title">10 Rondas</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">100 mts Row</span><span class="ex-detail">RPE 10 — ¡A FONDO!</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">1' Rest</span></div>
+      </div>
+      <div class="note-box" style="margin:0;">
+        <strong>Sin remo</strong>, podés hacer un sprint de: 8 American Swing + 8 Sumo Deadlift High Pull + 5 Burpees Broad Jump (24 / 16 kg).
+      </div>
+    </div>
+  </details>
+
+  <div class="note-box note-warn" style="margin:0 0 12px 0;text-align:center;"><strong>Rest 5'</strong> — hidratación y reposición</div>
+
+  <details class="wod-block">
+    <summary><span class="block-icon" style="color:var(--blue)">🔁</span><div><div class="block-title">CAPACIDAD AERÓBICA · Bloque 3</div><div class="block-subtitle">3 Rondas de Bike + BBJO</div></div><span class="block-chevron">▼</span></summary>
+    <div class="wod-body">
+      <div class="ex-group">
+        <div class="ex-group-title">3 Rondas</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">25 / 20 Cal Bike</span><span class="ex-detail">RPE 7 · Sin bici: Shuttle Runs de 2×7,5 mts × 10 reps</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">15 Burpees Box Jump Over</span><span class="ex-detail">RPE 8</span></div>
+      </div>
+    </div>
+  </details>
+</template>
+
+<template id="t-c3s5mie-content">
+  <div class="plan-header">
+    <div class="plan-day-label" style="color:var(--blue)">Miércoles 7/10 · Ciclo 3</div>
+    <div class="plan-title">2T 2026 — Semana 9 · Competencia</div>
+    <div class="plan-tags">
+      <span class="tag tag-str">Fuerza Mixta</span>
+      <span class="tag tag-oly">Habilidad Gimnástica</span>
+      <span class="tag tag-wod">Metcon 2 Rondas</span>
+      <span class="tag tag-high">Carga Alta</span>
+    </div>
+  </div>
+
+  <div class="sub-label" style="color:var(--green)">Sesión 1</div>
+
+  <details class="block">
+    <summary><span class="block-icon">⚡</span><div><div class="block-title">CALENTAMIENTO</div><div class="block-subtitle">Pliometría + 3 Rondas</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="ex-group-title">Pliometría — 4 series</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">3 Broad Jump over Hurdle</span><span class="ex-detail">Salto en largo pasando por encima de una valla media, <strong>más alta que la semana pasada</strong></span></div>
+      </div>
+      <div class="ex-group">
+        <div class="ex-group-title">3 Rondas</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">10 RDL a 1 pierna por lado</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5 Hang Muscle Cleans</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5 Front Squat</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5 Hang Squat Clean</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">10/10 Single Leg Glute Bridges</span><span class="ex-detail">Sosteniendo una banda en vertical con brazos y hombros</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">10 V-Ups explosivos desde hollow</span></div>
+      </div>
+    </div>
+  </details>
+
+  <details class="block">
+    <summary><span class="block-icon" style="color:var(--green)">🏋️</span><div><div class="block-title">FUERZA MIXTA</div><div class="block-subtitle">Rope Climb + Deadlift TnG · Rest 2-3' entre rondas</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">1-1-1-1-1 Legless Rope Climb</span><span class="ex-detail">o 4-4-4-4-4 Rope Pull Ups · o bien 5 Chin Ups</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">10-8-6-4-2 Deadlift TnG</span></div>
+      </div>
+      <div class="ex-group">
+        <div class="complex-wrap"><div class="complex-list">
+          <div class="c-item"><span class="c-item-name">Deadlift TnG</span><span class="c-item-reps" style="color:var(--orange)">70% – 75%</span></div>
+        </div></div>
+      </div>
+      <div class="note-box" style="margin:0;"><strong>Rest 2-3'</strong> entre rondas.</div>
+    </div>
+  </details>
+
+  <details class="block">
+    <summary><span class="block-icon" style="color:var(--yellow)">🤸</span><div><div class="block-title">HABILIDAD GIMNÁSTICA</div><div class="block-subtitle">5 Rondas · Rest libre para mantener calidad</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="ex-group-title">Parte 1 — Max Rep en 1' (dentro de 1 m²)</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">2 Shoulder Taps en Vertical Libre + 360° + 1 Free HSPU</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">Si no sale, en la pared: 4 Shoulder Taps + 1 giro 180° + 2 Wall Facing HSPU</span><span class="ex-detail">Con el 180° quedás mirando a la pared</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">O bien: practicás tu caminata de manos en pasadas de 10 mts</span></div>
+      </div>
+      <div class="ex-group">
+        <div class="ex-group-title">Parte 2 — 1 rep del complex por ronda</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">1-2-3-4-5 Bar Muscle Ups</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">2-4-6-8-10 Chest to Bar</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">4-8-12-16-20 Toes to Bar</span></div>
+      </div>
+      <div class="note-box note-warn" style="margin:0;">
+        Si te cuesta el UBK de este complex, bajás las reps y hacés 1-2-3-4-5 de cada uno, o menos. <strong>Intentemos que no — arriesgá el intento, pero no el agarre.</strong>
+      </div>
+    </div>
+  </details>
+
+  <details class="wod-block">
+    <summary><span class="block-icon" style="color:var(--blue)">🔁</span><div><div class="block-title">METCON</div><div class="block-subtitle">2 Rondas por tiempo · Rest 3' entre partes</div></div><span class="block-chevron">▼</span></summary>
+    <div class="wod-body">
+      <div class="ex-group">
+        <div class="ex-group-title">Parte A</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">18 / 15 Cal Row</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">50 Double Unders</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">15 Thrusters</span><span class="ex-detail">45 / 30 kg</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">30 Doble Cruzado</span></div>
+      </div>
+      <div class="note-box note-warn" style="margin:0 0 10px 0;text-align:center;"><strong>Rest 3'</strong></div>
+      <div class="ex-group">
+        <div class="ex-group-title">Parte B</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">18 / 15 Cal Bike</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">50 Simple Cruzado</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">15 Thrusters</span><span class="ex-detail">45 / 30 kg</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">3 Intentos de Max Rep Triple Under UBK</span><span class="ex-detail">o Dobles Cruzados</span></div>
+      </div>
+      <div class="note-box note-warn" style="margin:0;text-align:center;"><strong>Rest 3'</strong> — y arranca la ronda 2</div>
+    </div>
+  </details>
+
+  <div class="sub-label" style="color:var(--orange)">Sesión 2</div>
+
+  <details class="block">
+    <summary><span class="block-icon" style="color:var(--orange)">🧱</span><div><div class="block-title">STRONGMAN · Sled Push &amp; Pull</div><div class="block-subtitle">4 Rondas · Descanso 1:1</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="ex-group-title">4 Rondas</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">20 mts Sled Push</span><span class="ex-detail">180 / 150 kg</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">20 mts Sled Pull</span><span class="ex-detail">150 / 120 kg</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">20 mts Sandbag Carry</span><span class="ex-detail">70 / 50 kg</span></div>
+      </div>
+      <div class="note-box" style="margin:0;"><strong>Rest:</strong> lo mismo que tardaste en la ronda.</div>
+    </div>
+  </details>
+
+  <details class="block">
+    <summary><span class="block-icon" style="color:var(--orange)">💪</span><div><div class="block-title">EMOM ESTRUCTURAL × 12'</div><div class="block-subtitle">3 estaciones rotando</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="ex-group-title">EMOM 12'</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">A: 8/8 Bulgarian Split Squat</span><span class="ex-detail">RIR 2</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">B: 30'' L-Sit en paralelas</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">C: 8 Bench Press</span><span class="ex-detail">RIR 2</span></div>
+      </div>
+    </div>
+  </details>
+</template>
+
+<template id="t-c3s5jue-content">
+  <div class="plan-header">
+    <div class="plan-day-label" style="color:var(--blue)">Jueves 8/10 · Ciclo 3</div>
+    <div class="plan-title">2T 2026 — Semana 9 · Competencia</div>
+    <div class="plan-tags">
+      <span class="tag tag-wod">Descanso Activo</span>
+      <span class="tag tag-med">Zona 2</span>
+      <span class="tag" style="background:rgba(100,100,100,.15); color:var(--text2);">Sesión Única</span>
+    </div>
+  </div>
+
+  <details class="wod-block">
+    <summary><span class="block-icon" style="color:var(--blue)">🏃</span><div><div class="block-title">CAPACIDAD AERÓBICA · Zona 2</div><div class="block-subtitle">45-50' continuos · RPE 5</div></div><span class="block-chevron">▼</span></summary>
+    <div class="wod-body">
+      <div class="ex-group">
+        <div class="ex-group-title">45-50 Minutos Continuos</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">Running, C2 Bike o Row</span><span class="ex-detail">RPE 5</span></div>
+      </div>
+    </div>
+  </details>
+</template>
+
+<template id="t-c3s5vie-content">
+  <div class="plan-header">
+    <div class="plan-day-label" style="color:var(--blue)">Viernes 9/10 · Ciclo 3</div>
+    <div class="plan-title">2T 2026 — Semana 9 · Competencia</div>
+    <div class="plan-tags">
+      <span class="tag tag-oly">EMOM 20 Clean</span>
+      <span class="tag tag-str">Back Squat 4×6</span>
+      <span class="tag tag-str">Acond. Mixto</span>
+      <span class="tag tag-wod">Metcon 5 Rondas</span>
+      <span class="tag tag-high">Carga Alta</span>
+    </div>
+  </div>
+
+  <div class="sub-label" style="color:var(--green)">Sesión 1</div>
+
+  <details class="block">
+    <summary><span class="block-icon">⚡</span><div><div class="block-title">CALENTAMIENTO</div><div class="block-subtitle">Pliometría + 3 Rondas</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="ex-group-title">Pliometría — 4 series</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5/5 Single-Leg Lateral Bounds</span><span class="ex-detail">Saltos laterales a una pierna</span></div>
+      </div>
+      <div class="ex-group">
+        <div class="ex-group-title">3 Rondas</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5 Front Squats con pausa 3''</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">10 Dragon Flag con excéntrico de 1''</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5 Balance Snatches</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5 Buenos Días + Back Rack Push Press</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5 Hang Muscle Snatch</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">10 L-Sit Leg Raises en anillas</span></div>
+      </div>
+    </div>
+  </details>
+
+  <details class="block">
+    <summary><span class="block-icon" style="color:var(--green)">🏋️</span><div><div class="block-title">LEVANTAMIENTO OLÍMPICO &amp; ACONDICIONAMIENTO</div><div class="block-subtitle">EMOM 20' · Máquina + Clean alternados</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="ex-group-title">EMOM 20'</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">A: 12 / 9 Cal Row / Bike / Ski</span><span class="ex-detail">o 8 Shuttle Runs · RPE 8</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">B: 1 Squat Clean + 2 Shoulder to Overhead</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">C: 12 / 9 Cal Row / Bike / Ski</span><span class="ex-detail">o 8 Shuttle Runs · RPE 8</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">D: 2 Squat Clean + 1 Shoulder to Overhead</span></div>
+      </div>
+      <div class="ex-group">
+        <div class="complex-wrap"><div class="complex-list">
+          <div class="c-item"><span class="c-item-name">Carga (sobre C&amp;J)</span><span class="c-item-reps" style="color:var(--red)">75% – 85%</span></div>
+        </div></div>
+      </div>
+    </div>
+  </details>
+
+  <details class="block">
+    <summary><span class="block-icon" style="color:var(--green)">🏋️</span><div><div class="block-title">FUERZA BÁSICA · Back Squat</div><div class="block-subtitle">4 × 6 · Rest 2'30'' mínimo entre series</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="complex-wrap"><div class="complex-list">
+          <div class="c-item"><span class="c-item-name">4×6 reps</span><span class="c-item-reps" style="color:var(--orange)">90%</span></div>
+        </div></div>
+      </div>
+      <div class="note-box" style="margin:0 0 8px 0;">El <strong>90% es sobre las 6 reps pesadas que encontraste el lunes</strong> — ingresá ese peso en la casilla de arriba y te muestra los kg de hoy.</div>
+      <div class="note-box" style="margin:0;"><strong>Descansá al menos 2'30''</strong> entre series.</div>
+    </div>
+  </details>
+
+  <details class="block">
+    <summary><span class="block-icon" style="color:var(--orange)">🤸</span><div><div class="block-title">ACONDICIONAMIENTO MIXTO</div><div class="block-subtitle">5 Series rápidas · Ritmo de competencia · Rest 2'</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="ex-group-title">5 Series</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">2-4 Handstand Push Up en paralelas (Kipping) con abmat</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">2 Squat Snatch — singles</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">2-4 Handstand Push Up en paralelas (Kipping) con abmat</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">2 Squat Snatch — singles</span></div>
+      </div>
+      <div class="ex-group">
+        <div class="complex-wrap"><div class="complex-list">
+          <div class="c-item"><span class="c-item-name">Ronda 1 (snatch)</span><span class="c-item-reps" style="color:var(--yellow)">60%</span></div>
+          <div class="c-item"><span class="c-item-name">Subiendo por ronda</span><span class="c-item-reps" style="color:var(--orange)">+5%</span></div>
+        </div></div>
+      </div>
+      <div class="note-box" style="margin:0;"><strong>Rest 2'</strong> entre series. Empezá con un 60% en el snatch y subí de a 5% por ronda.</div>
+    </div>
+  </details>
+
+  <details class="wod-block">
+    <summary><span class="block-icon" style="color:var(--blue)">🔁</span><div><div class="block-title">METCON</div><div class="block-subtitle">5 Rondas por tiempo · Rest 30'' obligatorio</div></div><span class="block-chevron">▼</span></summary>
+    <div class="wod-body">
+      <div class="ex-group">
+        <div class="ex-group-title">5 Rondas</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">1 Rope Climb</span><span class="ex-detail">Comenzando sentados en el piso</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">10 Dual KB Hang Snatch</span><span class="ex-detail">2×24 / 16 kg</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">100 mts Ski Erg / Row</span><span class="ex-detail">o 50 Double Unders</span></div>
+      </div>
+      <div class="note-box" style="margin:0;"><strong>Rest 30''</strong> entre series, obligatorios.</div>
+    </div>
+  </details>
+
+  <div class="sub-label" style="color:var(--orange)">Sesión 2</div>
+
+  <details class="block">
+    <summary><span class="block-icon" style="color:var(--orange)">🧱</span><div><div class="block-title">STRONGMAN</div><div class="block-subtitle">4 Rondas · Descanso 1:1</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="ex-group-title">4 Rondas</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">30 mts Farmer's Carry</span><span class="ex-detail">2×38 / 28 kg · Scaled 2×30 / 22,5 kg</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">15 / 12 Cal Bike</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">6 Sandbag Clean TNG</span><span class="ex-detail">70 / 50 kg · Scaled 50 / 30 kg</span></div>
+      </div>
+      <div class="note-box" style="margin:0;"><strong>Descansá</strong> lo que tardes en cada ronda.</div>
+    </div>
+  </details>
+
+  <details class="block">
+    <summary><span class="block-icon" style="color:var(--orange)">💪</span><div><div class="block-title">ACCESORIOS</div><div class="block-subtitle">3 Súper-series · Rest 2'</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="ex-group-title">3 Súper-series</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">40 mts Suitcase Carry por brazo</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">15 Vuelos Combinados con mancuerna</span><span class="ex-detail">RIR 2</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">12 Cuádriceps o Extensión de rodilla en pike con banda</span><span class="ex-detail">RIR 1</span></div>
+      </div>
+      <div class="note-box" style="margin:0;"><strong>Rest 2'</strong>.</div>
+    </div>
+  </details>
+</template>
+
+<template id="t-c3s6lun-content">
+  <div class="plan-header">
+    <div class="plan-day-label" style="color:var(--blue)">Lunes 13/10 · Ciclo 3</div>
+    <div class="plan-title">2T 2026 — Semana 10 · Rapthor / Tapering</div>
+    <div class="plan-tags">
+      <span class="tag tag-oly">EMOM 20 Snatch</span>
+      <span class="tag tag-str">Front Squat 6RM</span>
+      <span class="tag tag-wod">WOD 1 Freedom</span>
+      <span class="tag tag-wod">Rapthor</span>
+      <span class="tag tag-high">Carga Alta</span>
+    </div>
+  </div>
+
+  <div class="note-box note-warn" style="margin:0 0 12px 0;">
+    <strong>Nota general de la semana:</strong> con Rapthor el fin de semana, nos dividimos en dos: los que siguen con la planificación normal (siguen haciendo la transición) y los que hacen el <strong>TAPERING</strong> para la compe (bajan volumen, mantienen intensidad). <strong>Presten atención a cada sección así no se equivocan.</strong> Para aquellos que siguen entrenando, también voy a poner los WODs del Open de Freedom para que los vayan sintiendo, practicando o <strong>GRABANDO</strong>.
+  </div>
+
+  <div class="sub-label" style="color:var(--green)">Sesión 1 — NO compiten el finde</div>
+
+  <details class="block">
+    <summary><span class="block-icon">⚡</span><div><div class="block-title">CALENTAMIENTO</div><div class="block-subtitle">3 Rondas + Pliometría</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="ex-group-title">3 Rondas</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5 Sotts Press</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">8 Strict Toes to Rings</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">10 Spiderman Lunges</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5 Snatch Pulls</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5 Hang Muscle Snatch</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5 Snatch Balances</span></div>
+      </div>
+      <div class="ex-group">
+        <div class="ex-group-title">Pliometría — 4 series</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5 Depth Jumps to High Box</span><span class="ex-detail">Dejarse caer de un cajón de 30-45 cm, rebotar hacia el cajón más alto posible</span></div>
+      </div>
+    </div>
+  </details>
+
+  <details class="block">
+    <summary><span class="block-icon" style="color:var(--green)">🏋️</span><div><div class="block-title">FUERZA OLÍMPICA · EMOM 20'</div><div class="block-subtitle">Máquina + Snatch alternados</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="ex-group-title">EMOM 20' — repetí todo el ciclo durante los 20'</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">Min 1: 10 / 8 Cal Ski / Row / Bike</span><span class="ex-detail">RPE 8</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">Min 2: 1 Snatch Pull + 1 Power Snatch + 1 Squat Snatch</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">Min 3: 10 / 8 Cal Ski / Row / Bike</span><span class="ex-detail">RPE 8</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">Min 4: 1 Snatch Pull + 1 Hang Power Snatch + 1 Hang Squat Snatch</span></div>
+      </div>
+      <div class="ex-group">
+        <div class="complex-wrap"><div class="complex-list">
+          <div class="c-item"><span class="c-item-name">Carga del Snatch</span><span class="c-item-reps" style="color:var(--orange)">75% – 80%</span></div>
+        </div></div>
+      </div>
+    </div>
+  </details>
+
+  <details class="block">
+    <summary><span class="block-icon" style="color:var(--green)">🏋️</span><div><div class="block-title">FUERZA BÁSICA · Front Squat</div><div class="block-subtitle">15' para buscar 6 reps pesadas</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">15' para buscar 6 reps PESADAS</span></div>
+      </div>
+      <div class="note-box" style="margin:0;">Aproximá correctamente, de a poco. <strong>Dejá los pesos pesados para los últimos 5'.</strong></div>
+    </div>
+  </details>
+
+  <details class="wod-block">
+    <summary><span class="block-icon" style="color:var(--blue)">🔁</span><div><div class="block-title">METCON · WOD 1 de Open para Freedom Battle</div><div class="block-subtitle">14' total · Acorde a tu nivel</div></div><span class="block-chevron">▼</span></summary>
+    <div class="wod-body">
+      <div class="ex-group">
+        <div class="ex-group-title">Parte A — 3 Rondas por tiempo · del 0' al 6'</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">15 Thrusters</span><span class="ex-detail">40 / 25 kg</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">60 Double Unders</span></div>
+      </div>
+      <div class="ex-group">
+        <div class="ex-group-title">Parte B — del 6' al 10'</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">RM de Cluster</span></div>
+      </div>
+      <div class="ex-group">
+        <div class="ex-group-title">Parte C — por tiempo · del 10' al 14'</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">35 Burpees Box Jump Over</span></div>
+      </div>
+      <div class="note-box" style="margin:0;">
+        <strong>Nota:</strong> idealmente, <strong>filmate y hacelo oficialmente aunque no vayas a competir</strong>. Tené en cuenta que es un WOD que no requiere mucha estrategia, a menos que estés complicado con algún ejercicio como el double under o los thrusters. En ese caso tu objetivo será llegar lo mejor posible a ese movimiento para poder atacarlo y que no te lleve por delante. <strong>Leé atentamente el flow y el scorecard</strong> — si tenés dudas, consultá el grupo.
+      </div>
+    </div>
+  </details>
+
+  <div class="sub-label" style="color:var(--green)">Sesión 2 — NO compiten el finde</div>
+
+  <details class="block">
+    <summary><span class="block-icon" style="color:var(--orange)">🧱</span><div><div class="block-title">STRONGMAN · EMOM 15'</div><div class="block-subtitle">Hold + Carry + Clean &amp; Squats</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="ex-group-title">EMOM 15'</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">Min 1: 40'' Bearhug Sandbag Hold</span><span class="ex-detail">Pesado</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">Min 2: 40'' Max. Distancia Farmer's Carry</span><span class="ex-detail">2×38 / 28 kg · Scaled 2×30 / 22,5 kg</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">Min 3: 30'' Max Rep (1 Sandbag Clean + 2 Squats)</span></div>
+      </div>
+    </div>
+  </details>
+
+  <details class="block">
+    <summary><span class="block-icon" style="color:var(--orange)">💪</span><div><div class="block-title">ACCESORIOS y ESTRUCTURA</div><div class="block-subtitle">4 Súper-series · Rest 1' entre series</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="ex-group-title">4 Súper-series</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">20'' GHD Back Extension Hold con disco</span><span class="ex-detail">Más pesado que la semana pasada · RPE 7</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">20''/20'' Plancha Copenhagen</span><span class="ex-detail">RPE 8</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">10-15 Face Pulls con polea o banda</span></div>
+      </div>
+      <div class="note-box" style="margin:0;"><strong>Rest 1'</strong> entre series.</div>
+    </div>
+  </details>
+
+  <div class="sub-label" style="color:var(--red)">Sesión Única — COMPITEN el finde</div>
+
+  <details class="block">
+    <summary><span class="block-icon">⚡</span><div><div class="block-title">CALENTAMIENTO</div><div class="block-subtitle">3 Rondas + Pliometría</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="ex-group-title">3 Rondas</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5 Sotts Press</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">8 Strict Toes to Rings</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">10 Spiderman Lunges</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5 Snatch Pulls</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5 Hang Muscle Snatch</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5 Snatch Balances</span></div>
+      </div>
+      <div class="ex-group">
+        <div class="ex-group-title">Pliometría — 4 series</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5 Depth Jumps to High Box</span><span class="ex-detail">Dejarse caer de un cajón de 30-45 cm, rebotar hacia el cajón más alto posible</span></div>
+      </div>
+    </div>
+  </details>
+
+  <details class="block">
+    <summary><span class="block-icon" style="color:var(--green)">🏋️</span><div><div class="block-title">FUERZA BÁSICA · Front Squat</div><div class="block-subtitle">15' para buscar 6 reps pesadas</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">15' para buscar 6 reps PESADAS</span></div>
+      </div>
+      <div class="note-box" style="margin:0;">Aproximá correctamente, de a poco. <strong>Dejá los pesos pesados para los últimos 5'.</strong></div>
+    </div>
+  </details>
+
+  <details class="wod-block">
+    <summary><span class="block-icon" style="color:var(--blue)">🏋️</span><div><div class="block-title">FUERZA OLÍMPICA · WOD 2 de Rapthor</div><div class="block-subtitle">For Time 8' · Snatch escalonado + Shuttle Runs</div></div><span class="block-chevron">▼</span></summary>
+    <div class="wod-body">
+      <div class="note-box" style="margin:0 0 10px 0;">
+        Acá iría el <strong>WOD 2 de Rapthor</strong>. Si estás en duplas, es el de los Back Squats y Shuttle Runs.
+      </div>
+      <div class="ex-group">
+        <div class="ex-group-title">For Time · 8'</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">9 Snatch</span><span class="ex-detail">70 / 45 kg · Scaled 60 / 40 kg</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">3 Shuttle Runs (2×7,5 mts)</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">7 Snatch</span><span class="ex-detail">80 / 50 kg · Scaled 70 / 45 kg</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">6 Shuttle Runs (2×7,5 mts)</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5 Snatch</span><span class="ex-detail">90 / 55 kg · Scaled 80 / 50 kg</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">9 Shuttle Runs (2×7,5 mts)</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">3 Snatch</span><span class="ex-detail">100 / 60 kg · Scaled 90 / 55 kg</span></div>
+      </div>
+    </div>
+  </details>
+
+  <details class="wod-block">
+    <summary><span class="block-icon" style="color:var(--blue)">🔁</span><div><div class="block-title">METCON A · Por Tiempo</div><div class="block-subtitle">AMRAP 5' + Rest 1' + For Time 3'</div></div><span class="block-chevron">▼</span></summary>
+    <div class="wod-body">
+      <div class="note-box" style="margin:0 0 10px 0;">
+        Si estás en duplas u otra categoría que no sea Elite y RX, te tocaría acá el <strong>primer WOD de Rapthor</strong>.
+      </div>
+      <div class="ex-group">
+        <div class="ex-group-title">AMRAP 5'</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">6 Wall Facing HSPU</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">1 Legless Rope Climb</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">12 Box Jump Over</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">48 Double Unders</span></div>
+      </div>
+      <div class="note-box note-warn" style="margin:0 0 10px 0;text-align:center;"><strong>Rest 1 minuto</strong></div>
+      <div class="ex-group">
+        <div class="ex-group-title">For Time · 3'</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">13 Strict HSPU</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">15 Bar Muscle Ups</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">17 Burpee Box Jump Over</span></div>
+      </div>
+      <div class="note-box note-warn" style="margin:0;">
+        <strong>CLAVE:</strong> tomá nota de la estrategia que utilizás. Punto a tener en cuenta: puede ser atractivo ir unbroken en ambos WODs, pero depende estrictamente de tu capacidad. Ir UBK en los Strict HSPU puede significar cortar los BMU por fatiga, y <strong>cortar los BMU tarda más que cortar los HSPU</strong> — por ende valorá cada movimiento por sí solo e intentá no cortar el que genera más tiempo de transición. Tomá este WOD como un intento y arriesgá, para entender cómo te vas a sentir. <strong>TOMÁ NOTA.</strong>
+      </div>
+    </div>
+  </details>
+</template>
+
+<template id="t-c3s6mar-content">
+  <div class="plan-header">
+    <div class="plan-day-label" style="color:var(--blue)">Martes 14/10 · Ciclo 3</div>
+    <div class="plan-title">2T 2026 — Semana 10 · Rapthor / Tapering</div>
+    <div class="plan-tags">
+      <span class="tag tag-str">Push Press Olas</span>
+      <span class="tag tag-wod">Test Aeróbico</span>
+      <span class="tag tag-wod">WOD 3 Freedom</span>
+      <span class="tag tag-wod">WOD 2 Rapthor</span>
+      <span class="tag tag-high">Carga Alta</span>
+    </div>
+  </div>
+
+  <div class="sub-label" style="color:var(--green)">Sesión Única — NO compiten el finde</div>
+
+  <details class="block">
+    <summary><span class="block-icon">⚡</span><div><div class="block-title">CALENTAMIENTO (15 minutos)</div><div class="block-subtitle">Pliometría avanzada + 3 Rondas</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="ex-group-title">Pliometría Avanzada — 4 series</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5 Plyo Push-ups</span><span class="ex-detail">Con aplauso o despegue</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5 Medball Overhead Slam</span></div>
+      </div>
+      <div class="ex-group">
+        <div class="ex-group-title">3 Rondas</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5 Inchworms a Yoga Push Up</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5/5 KB Halos a 1 pierna</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">15 GHD Sit Up hasta Hollow</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">10/10 Bottoms Up KB Press</span></div>
+      </div>
+    </div>
+  </details>
+
+  <details class="block">
+    <summary><span class="block-icon" style="color:var(--green)">🏋️</span><div><div class="block-title">FUERZA BÁSICA · Push Press</div><div class="block-subtitle">2 Olas · Rest 2' entre series y olas</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="ex-group-title">Ola 1</div>
+        <div class="complex-wrap"><div class="complex-list">
+          <div class="c-item"><span class="c-item-name">5 reps</span><span class="c-item-reps" style="color:var(--orange)">72%</span></div>
+          <div class="c-item"><span class="c-item-name">4 reps</span><span class="c-item-reps" style="color:var(--orange)">77%</span></div>
+          <div class="c-item"><span class="c-item-name">3 reps</span><span class="c-item-reps" style="color:var(--red)">82%</span></div>
+        </div></div>
+      </div>
+      <div class="ex-group">
+        <div class="ex-group-title">Ola 2</div>
+        <div class="complex-wrap"><div class="complex-list">
+          <div class="c-item"><span class="c-item-name">5 reps</span><span class="c-item-reps" style="color:var(--orange)">77%</span></div>
+          <div class="c-item"><span class="c-item-name">4 reps</span><span class="c-item-reps" style="color:var(--red)">82%</span></div>
+          <div class="c-item"><span class="c-item-name">3 reps</span><span class="c-item-reps" style="color:var(--red)">87%</span></div>
+        </div></div>
+      </div>
+      <div class="note-box" style="margin:0;"><strong>Rest:</strong> 2' entre series y olas.</div>
+    </div>
+  </details>
+
+  <details class="wod-block">
+    <summary><span class="block-icon" style="color:var(--blue)">🔁</span><div><div class="block-title">CAPACIDAD AERÓBICA · TEST</div><div class="block-subtitle">50-40-30-20-10 Bike / Row</div></div><span class="block-chevron">▼</span></summary>
+    <div class="wod-body">
+      <div class="note-box note-warn" style="margin:0 0 10px 0;">
+        <strong>Si estás haciendo el Open oficialmente, empezá por el Open.</strong>
+      </div>
+      <div class="ex-group">
+        <div class="ex-group-title">50 - 40 - 30 - 20 - 10</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">Cal Bike</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">Cal Row</span></div>
+      </div>
+      <div class="note-box" style="margin:0;">
+        <strong>Hombres:</strong> Sub 20' respetable · Sub 18' bueno · Sub 16' avanzado · Sub 15' ELITE<br>
+        <strong>Mujeres:</strong> Sub 28' respetable · Sub 26' bueno · Sub 24' avanzado · Sub 22' ELITE
+      </div>
+    </div>
+  </details>
+
+  <div class="note-box note-warn" style="margin:0 0 12px 0;text-align:center;"><strong>Rest 15'</strong> — hidratación y reposición</div>
+
+  <details class="wod-block">
+    <summary><span class="block-icon" style="color:var(--blue)">🔁</span><div><div class="block-title">WOD 3 DE FREEDOM</div><div class="block-subtitle">For Time 8' · 27-21-15-9 + Max Rep BMU</div></div><span class="block-chevron">▼</span></summary>
+    <div class="wod-body">
+      <div class="ex-group">
+        <div class="ex-group-title">27 - 21 - 15 - 9</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">DB Snatch</span><span class="ex-detail">22,5 / 15 kg</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">Pull Ups</span></div>
+      </div>
+      <div class="ex-group">
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">Tiempo restante: Max Rep BMU</span><span class="ex-detail">Master hace TTB</span></div>
+      </div>
+      <div class="note-box" style="margin:0;">
+        <strong>Nota:</strong> ir UBK es una buena idea para los snatch. En los Pull Ups capaz no tanto — <strong>guardá un poco de agarre para el final</strong>. Podés ir rápido en los snatch y cortar en 2 las primeras dos series de pull ups, con transición rápida, para quedar más descansado hacia los BMU o TTB. Apuntá a unas <strong>40 reps si son BMU</strong> y unas <strong>65-70 si son TTB</strong>.
+      </div>
+    </div>
+  </details>
+
+  <div class="note-box note-warn" style="margin:0 0 12px 0;text-align:center;"><strong>Rest 10'</strong> — hidratación y reposición</div>
+
+  <details class="wod-block">
+    <summary><span class="block-icon" style="color:var(--blue)">🏃</span><div><div class="block-title">CIERRE · Run alternado</div><div class="block-subtitle">5 Rondas</div></div><span class="block-chevron">▼</span></summary>
+    <div class="wod-body">
+      <div class="ex-group">
+        <div class="ex-group-title">5 Rondas</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">4' Run</span><span class="ex-detail">RPE 6 · Zona 2</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">1' Run</span><span class="ex-detail">RPE 8-9</span></div>
+      </div>
+    </div>
+  </details>
+
+  <div class="sub-label" style="color:var(--red)">Sesión Única — COMPITEN el finde</div>
+
+  <details class="block">
+    <summary><span class="block-icon">⚡</span><div><div class="block-title">CALENTAMIENTO (15 minutos)</div><div class="block-subtitle">Pliometría avanzada + 3 Rondas</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="ex-group-title">Pliometría Avanzada — 4 series</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5 Plyo Push-ups</span><span class="ex-detail">Con aplauso o despegue</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5 Medball Overhead Slam</span></div>
+      </div>
+      <div class="ex-group">
+        <div class="ex-group-title">3 Rondas</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5 Inchworms a Yoga Push Up</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5/5 KB Halos a 1 pierna</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">15 GHD Sit Up hasta Hollow</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">10/10 Bottoms Up KB Press</span></div>
+      </div>
+    </div>
+  </details>
+
+  <details class="block">
+    <summary><span class="block-icon" style="color:var(--green)">🏋️</span><div><div class="block-title">FUERZA BÁSICA · Push Press (Tapering)</div><div class="block-subtitle">2 Olas · Rest 2' entre series y olas</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="ex-group-title">Ola 1</div>
+        <div class="complex-wrap"><div class="complex-list">
+          <div class="c-item"><span class="c-item-name">5 reps</span><span class="c-item-reps" style="color:var(--orange)">72%</span></div>
+          <div class="c-item"><span class="c-item-name">4 reps</span><span class="c-item-reps" style="color:var(--orange)">77%</span></div>
+          <div class="c-item"><span class="c-item-name">3 reps</span><span class="c-item-reps" style="color:var(--red)">82%</span></div>
+        </div></div>
+      </div>
+      <div class="ex-group">
+        <div class="ex-group-title">Ola 2</div>
+        <div class="complex-wrap"><div class="complex-list">
+          <div class="c-item"><span class="c-item-name">5 reps</span><span class="c-item-reps" style="color:var(--orange)">77%</span></div>
+          <div class="c-item"><span class="c-item-name">4 reps</span><span class="c-item-reps" style="color:var(--red)">82%</span></div>
+          <div class="c-item"><span class="c-item-name">3 reps</span><span class="c-item-reps" style="color:var(--red)">87%</span></div>
+        </div></div>
+      </div>
+      <div class="note-box" style="margin:0;"><strong>Rest:</strong> 2' entre series y olas.</div>
+    </div>
+  </details>
+
+  <div class="note-box note-warn" style="margin:0 0 12px 0;text-align:center;"><strong>Rest 15'</strong> — hidratación y reposición</div>
+
+  <details class="wod-block">
+    <summary><span class="block-icon" style="color:var(--blue)">🔁</span><div><div class="block-title">WOD 2 DE RAPTHOR</div><div class="block-subtitle">AMRAP 2' - 2' - 2' - 3'</div></div><span class="block-chevron">▼</span></summary>
+    <div class="wod-body">
+      <div class="ex-group">
+        <div class="ex-group-title">AMRAP 2' - 2' - 2' - 3'</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">18 Wall Ball Shots</span><span class="ex-detail">9 / 6 kg</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">15 Chest to Bar</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">Max Rep S2OH Fatbar</span><span class="ex-detail">35 kg por lado</span></div>
+      </div>
+      <div class="note-box" style="margin:0 0 8px 0;">
+        <strong>Nota:</strong> las cantidades son pocas para ir UBK en los WB y en los C2B. Sería ideal que lo puedan hacer, para llegar con más resto a los S2OH. Aproximadamente tendrían que tardar <strong>50'' - 1'</strong> en hacer los primeros dos. Les queda mucho tiempo para hacer Shoulder, por ende toca trabajar con un plan: <strong>sí o sí dividir en muchas series</strong>, y no ir al fallo en ningún momento salvo en el último intervalo.
+      </div>
+      <div class="note-box note-warn" style="margin:0;"><strong>Score ideal:</strong> 15-20 reps por intervalo en promedio.</div>
+      <div class="note-box" style="margin:8px 0 0 0;">Si necesitás la versión de duplas, hablame.</div>
+    </div>
+  </details>
+
+  <div class="note-box note-warn" style="margin:0 0 12px 0;text-align:center;"><strong>Rest 10'</strong> — hidratación y reposición</div>
+
+  <details class="wod-block">
+    <summary><span class="block-icon" style="color:var(--blue)">🔁</span><div><div class="block-title">CAPACIDAD AERÓBICA · TEST</div><div class="block-subtitle">50-40-30-20-10 Bike / Row</div></div><span class="block-chevron">▼</span></summary>
+    <div class="wod-body">
+      <div class="ex-group">
+        <div class="ex-group-title">50 - 40 - 30 - 20 - 10</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">Cal Bike</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">Cal Row</span></div>
+      </div>
+      <div class="note-box" style="margin:0;">
+        <strong>Hombres:</strong> Sub 20' respetable · Sub 18' bueno · Sub 16' avanzado · Sub 15' ELITE<br>
+        <strong>Mujeres:</strong> Sub 28' respetable · Sub 26' bueno · Sub 24' avanzado · Sub 22' ELITE
+      </div>
+    </div>
+  </details>
+</template>
+
+<template id="t-c3s6mie-content">
+  <div class="plan-header">
+    <div class="plan-day-label" style="color:var(--blue)">Miércoles 15/10 · Ciclo 3</div>
+    <div class="plan-title">2T 2026 — Semana 10 · Rapthor / Tapering</div>
+    <div class="plan-tags">
+      <span class="tag tag-str">Fuerza Mixta</span>
+      <span class="tag tag-oly">Habilidad Gimnástica</span>
+      <span class="tag tag-wod">Open 27.2</span>
+      <span class="tag tag-wod">Rapthor</span>
+      <span class="tag tag-high">Carga Alta</span>
+    </div>
+  </div>
+
+  <div class="sub-label" style="color:var(--green)">Sesión 1 — NO compiten el finde</div>
+
+  <details class="block">
+    <summary><span class="block-icon">⚡</span><div><div class="block-title">CALENTAMIENTO</div><div class="block-subtitle">Pliometría + 3 Rondas</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="ex-group-title">Pliometría — 4 series</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">3 Broad Jump over Hurdle</span><span class="ex-detail">Salto en largo pasando por encima de una valla media, <strong>más alta que la semana pasada</strong></span></div>
+      </div>
+      <div class="ex-group">
+        <div class="ex-group-title">3 Rondas</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">10 RDL a 1 pierna por lado</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5 Hang Muscle Cleans</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5 Front Squat</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5 Hang Squat Clean</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">10/10 Single Leg Glute Bridges</span><span class="ex-detail">Sosteniendo una banda en vertical con brazos y hombros</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">10 V-Ups explosivos desde hollow</span></div>
+      </div>
+    </div>
+  </details>
+
+  <details class="block">
+    <summary><span class="block-icon" style="color:var(--green)">🏋️</span><div><div class="block-title">FUERZA MIXTA</div><div class="block-subtitle">Legless Rope Climb + Deadlift TnG · Rest 2-3' entre rondas</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">1-1-1-1-1 Legless Rope Climb</span><span class="ex-detail">o 4-4-4-4-4 Rope Pull Ups · o bien 5 Chin Ups</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">8-6-4-2-1 Deadlift TnG</span></div>
+      </div>
+      <div class="ex-group">
+        <div class="complex-wrap"><div class="complex-list">
+          <div class="c-item"><span class="c-item-name">Deadlift TnG</span><span class="c-item-reps" style="color:var(--orange)">75% – 80%</span></div>
+        </div></div>
+      </div>
+      <div class="note-box" style="margin:0;"><strong>Rest 2-3'</strong> entre rondas.</div>
+    </div>
+  </details>
+
+  <details class="block">
+    <summary><span class="block-icon" style="color:var(--yellow)">🤸</span><div><div class="block-title">HABILIDAD GIMNÁSTICA</div><div class="block-subtitle">2 Series de práctica + Cada 3' × 4 Rondas</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="ex-group-title">2 Series · Descanso libre entre cada una</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">30'' Práctica de Caminata de Manos con obstáculos</span><span class="ex-detail">Escalera, zigzag, o con pirueta en el medio</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">30'' Práctica de L-Sit a Handstand en paralelas</span><span class="ex-detail">Si es muy avanzado: free HSPU en el lugar, o Headstand controlando la extensión de piernas</span></div>
+      </div>
+      <div class="ex-group">
+        <div class="ex-group-title">Cada 3' × 4 Rondas</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">3-5 UB RMU / BMU + Assault Bike</span><span class="ex-detail">Bike @ RPE 4-5</span></div>
+      </div>
+    </div>
+  </details>
+
+  <details class="wod-block">
+    <summary><span class="block-icon" style="color:var(--blue)">🔁</span><div><div class="block-title">METCON · Evento 2 de Freedom (Open 27.2)</div><div class="block-subtitle">Time Cap 9'</div></div><span class="block-chevron">▼</span></summary>
+    <div class="wod-body">
+      <div class="ex-group">
+        <div class="ex-group-title">10 - 20 - 30 - 40</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">Wall Ball Shots</span><span class="ex-detail">9 / 6 kg</span></div>
+      </div>
+      <div class="ex-group">
+        <div class="ex-group-title">8 - 6 - 4 - 2</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">Clean</span><span class="ex-detail">Elite y RX 90 / 60 kg · Advanced 80 / 45 kg · Scaled 70 / 40 kg — chequeá el peso que te toca</span></div>
+      </div>
+      <div class="note-box" style="margin:0;">
+        <strong>Nota:</strong> cleans pesados significan <strong>singles desde un principio</strong>. Intentá jugártela en los Wall Balls — ir unbroken es casi imperativo con un volumen tan bajo. <strong>Power Clean sería ideal.</strong>
+      </div>
+    </div>
+  </details>
+
+  <div class="sub-label" style="color:var(--green)">Sesión 2 — NO compiten el finde</div>
+
+  <details class="block">
+    <summary><span class="block-icon" style="color:var(--orange)">🧱</span><div><div class="block-title">STRONGMAN · Sled Push &amp; Pull</div><div class="block-subtitle">4 Rondas · Descanso 1:1</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="ex-group-title">4 Rondas</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">20 mts Sled Push</span><span class="ex-detail">200 / 160 kg</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">20 mts Sled Pull</span><span class="ex-detail">160 / 130 kg</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">20 mts Sandbag Carry</span><span class="ex-detail">70 / 50 kg</span></div>
+      </div>
+      <div class="note-box" style="margin:0;"><strong>Rest:</strong> lo mismo que tardaste en la ronda.</div>
+    </div>
+  </details>
+
+  <details class="block">
+    <summary><span class="block-icon" style="color:var(--orange)">💪</span><div><div class="block-title">EMOM ESTRUCTURAL × 12'</div><div class="block-subtitle">3 estaciones rotando</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="ex-group-title">EMOM 12'</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">A: 8/8 Cuádriceps a una pierna</span><span class="ex-detail">RIR 2</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">B: 30'' L-Hang Isométrico</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">C: 8 Bench Press Inclinado</span><span class="ex-detail">RIR 2</span></div>
+      </div>
+    </div>
+  </details>
+
+  <div class="sub-label" style="color:var(--red)">Sesión Única — COMPITEN el finde</div>
+
+  <details class="block">
+    <summary><span class="block-icon">⚡</span><div><div class="block-title">CALENTAMIENTO</div><div class="block-subtitle">Pliometría + 3 Rondas</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="ex-group-title">Pliometría — 4 series</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">3 Broad Jump over Hurdle</span><span class="ex-detail">Salto en largo pasando por encima de una valla media, <strong>más alta que la semana pasada</strong></span></div>
+      </div>
+      <div class="ex-group">
+        <div class="ex-group-title">3 Rondas</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">10 RDL a 1 pierna por lado</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5 Hang Muscle Cleans</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5 Front Squat</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5 Hang Squat Clean</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">10/10 Single Leg Glute Bridges</span><span class="ex-detail">Sosteniendo una banda en vertical con brazos y hombros</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">10 V-Ups explosivos desde hollow</span></div>
+      </div>
+    </div>
+  </details>
+
+  <details class="block">
+    <summary><span class="block-icon" style="color:var(--green)">🏋️</span><div><div class="block-title">FUERZA MIXTA</div><div class="block-subtitle">Rope Climb + Deadlift TnG · Rest 2-3' entre rondas</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">1-1-1-1-1 Rope Climb</span><span class="ex-detail">o 4-4-4-4-4 Rope Pull Ups · o bien 5 Chin Ups</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">8-6-4-2-1 Deadlift TnG</span></div>
+      </div>
+      <div class="ex-group">
+        <div class="complex-wrap"><div class="complex-list">
+          <div class="c-item"><span class="c-item-name">Deadlift TnG</span><span class="c-item-reps" style="color:var(--orange)">75% – 80%</span></div>
+        </div></div>
+      </div>
+      <div class="note-box" style="margin:0;"><strong>Rest 2-3'</strong> entre rondas.</div>
+    </div>
+  </details>
+
+  <details class="block">
+    <summary><span class="block-icon" style="color:var(--yellow)">🤸</span><div><div class="block-title">HABILIDAD GIMNÁSTICA</div><div class="block-subtitle">2 Series de práctica + Cada 3' × 4 Rondas</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="ex-group-title">2 Series · Descanso libre entre cada una</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">30'' Práctica de Caminata de Manos con obstáculos</span><span class="ex-detail">Escalera, zigzag, o con pirueta en el medio</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">30'' Práctica de L-Sit a Handstand en paralelas</span><span class="ex-detail">Si es muy avanzado: free HSPU en el lugar, o Headstand controlando la extensión de piernas</span></div>
+      </div>
+      <div class="ex-group">
+        <div class="ex-group-title">Cada 3' × 4 Rondas</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">3-5 UB RMU / BMU + Assault Bike</span><span class="ex-detail">Bike @ RPE 4-5</span></div>
+      </div>
+    </div>
+  </details>
+
+  <details class="wod-block">
+    <summary><span class="block-icon" style="color:var(--blue)">🔁</span><div><div class="block-title">METCON · Último evento de Rapthor</div><div class="block-subtitle">Time Cap 12' · 3 Estaciones con movimiento de elementos</div></div><span class="block-chevron">▼</span></summary>
+    <div class="wod-body">
+      <div class="ex-group">
+        <div class="ex-group-title">Estación 1</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">300 mts Run</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">10 Deadlift</span><span class="ex-detail">2×24 / 2×16 kg</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">10 Hang Clean</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">300 mts Run</span></div>
+      </div>
+      <div class="note-box note-warn" style="margin:0 0 10px 0;text-align:center;"><strong>Mover elementos a Estación 2</strong></div>
+      <div class="ex-group">
+        <div class="ex-group-title">Estación 2</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">10 Hang Snatch</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">10 Front Squat</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">300 mts Run</span></div>
+      </div>
+      <div class="note-box note-warn" style="margin:0 0 10px 0;text-align:center;"><strong>Mover elementos a Estación 3</strong></div>
+      <div class="ex-group">
+        <div class="ex-group-title">Estación 3</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">20 Thrusters</span></div>
+      </div>
+      <div class="note-box note-warn" style="margin:0 0 10px 0;text-align:center;"><strong>Mover elementos a Estación 2</strong></div>
+      <div class="ex-group">
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">10 Deadlift</span></div>
+      </div>
+      <div class="note-box note-warn" style="margin:0 0 10px 0;text-align:center;"><strong>Mover elementos a Estación 1</strong></div>
+      <div class="ex-group">
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">10 Deadlift</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">Corren al tótem</span></div>
+      </div>
+      <div class="note-box note-warn" style="margin:0;">
+        <strong>Nota:</strong> es un <strong>sprint</strong>. No queda otra que ir UBK y fuerte. Hay muchas transiciones, y sí o sí nos obliga a recuperarnos mientras corremos. <strong>Presten atención a los cambios de estación y memorícenlos.</strong>
+      </div>
+    </div>
+  </details>
+</template>
+
+<template id="t-c3s6jue-content">
+  <div class="plan-header">
+    <div class="plan-day-label" style="color:var(--blue)">Jueves 16/10 · Ciclo 3</div>
+    <div class="plan-title">2T 2026 — Semana 10 · Rapthor / Tapering</div>
+    <div class="plan-tags">
+      <span class="tag tag-wod">Descanso Activo</span>
+      <span class="tag tag-med">Zona 2</span>
+      <span class="tag" style="background:rgba(100,100,100,.15); color:var(--text2);">Sesión Única</span>
+    </div>
+  </div>
+
+  <div class="sub-label" style="color:var(--green)">NO compiten el finde — Descanso Activo</div>
+
+  <details class="wod-block">
+    <summary><span class="block-icon" style="color:var(--blue)">🏃</span><div><div class="block-title">CAPACIDAD AERÓBICA · Zona 2</div><div class="block-subtitle">45-50' continuos · RPE 5</div></div><span class="block-chevron">▼</span></summary>
+    <div class="wod-body">
+      <div class="ex-group">
+        <div class="ex-group-title">45-50 Minutos Continuos</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">Running, C2 Bike o Row</span><span class="ex-detail">RPE 5</span></div>
+      </div>
+    </div>
+  </details>
+
+  <div class="sub-label" style="color:var(--red)">COMPITEN el finde</div>
+
+  <div class="note-box note-warn" style="margin:0;">
+    <strong>Descansás completamente.</strong>
+  </div>
+</template>
+
+<template id="t-c3s6vie-content">
+  <div class="plan-header">
+    <div class="plan-day-label" style="color:var(--blue)">Viernes 17/10 · Ciclo 3</div>
+    <div class="plan-title">2T 2026 — Semana 10 · Rapthor / Tapering</div>
+    <div class="plan-tags">
+      <span class="tag tag-oly">EMOM 20 Clean &amp; Jerk</span>
+      <span class="tag tag-str">Front Squat 4×6</span>
+      <span class="tag tag-str">HSPU Déficit</span>
+      <span class="tag tag-wod">Activación pre-compe</span>
+      <span class="tag tag-high">Carga Alta</span>
+    </div>
+  </div>
+
+  <div class="sub-label" style="color:var(--green)">Sesión 1 — NO compiten el finde</div>
+
+  <details class="block">
+    <summary><span class="block-icon">⚡</span><div><div class="block-title">CALENTAMIENTO</div><div class="block-subtitle">Pliometría + 3 Rondas</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="ex-group-title">Pliometría — 4 series</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5/5 Single-Leg Lateral Bounds</span><span class="ex-detail">Saltos laterales a una pierna</span></div>
+      </div>
+      <div class="ex-group">
+        <div class="ex-group-title">3 Rondas</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5 Front Squats con pausa 3''</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">10 Dragon Flag con excéntrico de 1''</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5 Balance Snatches</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5 Buenos Días + Back Rack Push Press</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5 Hang Muscle Snatch</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">10 L-Sit Leg Raises en anillas</span></div>
+      </div>
+    </div>
+  </details>
+
+  <details class="block">
+    <summary><span class="block-icon" style="color:var(--green)">🏋️</span><div><div class="block-title">LEVANTAMIENTO OLÍMPICO &amp; ACONDICIONAMIENTO</div><div class="block-subtitle">EMOM 20' · Máquina + Clean &amp; Jerk alternados</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="ex-group-title">EMOM 20'</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">A: 12 / 9 Cal Row / Bike / Ski</span><span class="ex-detail">o 8 Shuttle Runs · RPE 8</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">B: 1 Squat Clean + 2 Push Jerk</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">C: 12 / 9 Cal Row / Bike / Ski</span><span class="ex-detail">o 8 Shuttle Runs · RPE 8</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">D: 2 Hang Squat Clean + 1 Split Jerk</span></div>
+      </div>
+      <div class="ex-group">
+        <div class="complex-wrap"><div class="complex-list">
+          <div class="c-item"><span class="c-item-name">Carga (sobre C&amp;J)</span><span class="c-item-reps" style="color:var(--red)">75% – 85%</span></div>
+        </div></div>
+      </div>
+    </div>
+  </details>
+
+  <details class="block">
+    <summary><span class="block-icon" style="color:var(--green)">🏋️</span><div><div class="block-title">FUERZA BÁSICA · Front Squat</div><div class="block-subtitle">4 × 6 · Rest 2'30'' mínimo entre series</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="complex-wrap"><div class="complex-list">
+          <div class="c-item"><span class="c-item-name">4×6 reps</span><span class="c-item-reps" style="color:var(--orange)">90%</span></div>
+        </div></div>
+      </div>
+      <div class="note-box" style="margin:0 0 8px 0;">El <strong>90% es sobre las 6 reps pesadas que encontraste el lunes</strong> — ingresá ese peso en la casilla de arriba y te muestra los kg de hoy.</div>
+      <div class="note-box" style="margin:0;"><strong>Descansá al menos 2'30''</strong> entre series.</div>
+    </div>
+  </details>
+
+  <details class="block">
+    <summary><span class="block-icon" style="color:var(--orange)">🤸</span><div><div class="block-title">ACONDICIONAMIENTO HANDSTAND PUSH UP</div><div class="block-subtitle">4 Series · Déficit descendente · Rest 3-4'</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="ex-group-title">4 Series — AMRAP UBK de Kipping HSPU con déficit</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">Disco de 20 kg por lado</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">10'' Rest</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">Disco de 15 kg por lado</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">10'' Rest</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">Disco de 10 kg por lado</span></div>
+      </div>
+      <div class="note-box" style="margin:0 0 8px 0;">
+        En los tres tramos: <strong>bajando en 4'', subiendo explosivamente</strong>. Pará una o dos reps antes del fallo.
+      </div>
+      <div class="note-box" style="margin:0;"><strong>Rest 3-4'</strong> entre series.</div>
+    </div>
+  </details>
+
+  <details class="wod-block">
+    <summary><span class="block-icon" style="color:var(--blue)">🔁</span><div><div class="block-title">METCON</div><div class="block-subtitle">5 Series de 3 × 1' · Rest 3' entre series</div></div><span class="block-chevron">▼</span></summary>
+    <div class="wod-body">
+      <div class="note-box" style="margin:0 0 10px 0;">
+        No vayas a fondo en las calorías, pero <strong>apuntá a un ritmo fuerte que puedas repetir</strong> a lo largo de todas las series.
+      </div>
+      <div class="ex-group">
+        <div class="ex-group-title">5 Series — cada minuto, max cal en el tiempo restante</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">1' — 1 Rope Climb Legless + Max Cal Row</span><span class="ex-detail">Comenzás desde el piso sentado · o Bike Cals, o Shuttle Runs de 2×7,5 mts</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">1' — 5 RMU / 7 BMU + Max Cal Row</span><span class="ex-detail">o Bike Cals, o Shuttle Runs de 2×7,5 mts</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">1' — 15 Toes to Bar + Max Cal Row</span><span class="ex-detail">o Bike Cals, o Shuttle Runs de 2×7,5 mts</span></div>
+      </div>
+      <div class="note-box" style="margin:0;"><strong>Rest 3'</strong> entre series.</div>
+    </div>
+  </details>
+
+  <div class="sub-label" style="color:var(--green)">Sesión 2 — NO compiten el finde</div>
+
+  <details class="block">
+    <summary><span class="block-icon" style="color:var(--orange)">💪</span><div><div class="block-title">ESTRUCTURA · EMOM 20'</div><div class="block-subtitle">Dos bloques de 10'</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="ex-group-title">0 - 10'</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">Min 1: 6-8 DB Bench Press</span><span class="ex-detail">Pesado · bajando en 4'', subo rápido</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">Min 2: 6-8 DB Row a 1 brazo</span><span class="ex-detail">Pesado · bajando en 4'', subo rápido</span></div>
+      </div>
+      <div class="ex-group">
+        <div class="ex-group-title">11 - 20'</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">Min 1: 8-10 Skull Crushers</span><span class="ex-detail">Pesado · bajando en 2'', subo rápido</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">Min 2: 8-10 EZ Bar Bicep Curl</span><span class="ex-detail">Pesado · bajando en 2'', subo rápido</span></div>
+      </div>
+    </div>
+  </details>
+
+  <details class="wod-block">
+    <summary><span class="block-icon" style="color:var(--blue)">🔁</span><div><div class="block-title">METCON 2</div><div class="block-subtitle">30-20-10 · Time Cap 12'</div></div><span class="block-chevron">▼</span></summary>
+    <div class="wod-body">
+      <div class="ex-group">
+        <div class="ex-group-title">30 - 20 - 10 · TC 12'</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">Calorías Bici</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">Box Step Over</span><span class="ex-detail">Sin peso</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">Wall Ball Shots</span><span class="ex-detail">9 / 6 kg</span></div>
+      </div>
+    </div>
+  </details>
+
+  <div class="sub-label" style="color:var(--red)">Sesión Única — COMPITEN el finde</div>
+
+  <details class="block">
+    <summary><span class="block-icon">⚡</span><div><div class="block-title">CALENTAMIENTO</div><div class="block-subtitle">Pliometría + 3 Rondas</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="ex-group-title">Pliometría — 4 series</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5/5 Single-Leg Lateral Bounds</span><span class="ex-detail">Saltos laterales a una pierna</span></div>
+      </div>
+      <div class="ex-group">
+        <div class="ex-group-title">3 Rondas</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5 Front Squats con pausa 3''</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">10 Dragon Flag con excéntrico de 1''</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5 Balance Snatches</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5 Buenos Días + Back Rack Push Press</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5 Hang Muscle Snatch</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">10 L-Sit Leg Raises en anillas</span></div>
+      </div>
+    </div>
+  </details>
+
+  <details class="block">
+    <summary><span class="block-icon" style="color:var(--green)">🏋️</span><div><div class="block-title">ACTIVACIÓN · Potencia</div><div class="block-subtitle">3 + 3 Series · Rest 1' entre series</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="ex-group-title">3 Series — 3 Hang Power Clean</div>
+        <div class="complex-wrap"><div class="complex-list">
+          <div class="c-item"><span class="c-item-name">3 Hang Power Clean</span><span class="c-item-reps" style="color:var(--orange)">75%</span></div>
+        </div></div>
+      </div>
+      <div class="note-box note-warn" style="margin:0 0 10px 0;text-align:center;">Rest 1' entre series · <strong>Rest 3'</strong> entre bloques</div>
+      <div class="ex-group">
+        <div class="ex-group-title">3 Series — 3 Hang Power Snatch</div>
+        <div class="complex-wrap"><div class="complex-list">
+          <div class="c-item"><span class="c-item-name">3 Hang Power Snatch</span><span class="c-item-reps" style="color:var(--orange)">70%</span></div>
+        </div></div>
+      </div>
+      <div class="note-box" style="margin:0;">
+        <strong>Nota:</strong> buscá velocidad en la metida y en la salida. Buscá sentirte bien en el levantamiento antes de empezar las series. <strong>Calentá bien.</strong>
+      </div>
+    </div>
+  </details>
+
+  <details class="block">
+    <summary><span class="block-icon" style="color:var(--blue)">🔁</span><div><div class="block-title">ACTIVACIÓN · Aeróbica</div><div class="block-subtitle">EMOM 9' · 3 estaciones</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="ex-group-title">EMOM 9'</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">A: 5 Burpees + Shuttle Run (2×7,5 mts)</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">B: 5 Box Jump (alto / medio) + 20 Double Unders</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">C: 2 Bar Muscle Up + 5 Toes to Bar</span><span class="ex-detail">BMU llegando arriba casi extendido · T2B lo más rápido que puedas</span></div>
+      </div>
+    </div>
+  </details>
+
+  <div class="note-box" style="margin:0;">
+    <strong>Vuelta a la calma, y a preparar ese cuerpo.</strong><br><br>
+    Mañana no salen a competir para demostrarle algo a nadie más que ustedes. <strong>La competencia no es una vidriera para el resto, es un espejo.</strong> Es la instancia exacta para ver dónde (y no cómo) estamos parados, y sobre todo cómo le hacemos frente a un contexto que probablemente no se repita de nuevo. En Dos Tiempos siempre buscamos dejar todo en cada repetición, no para que miren los de afuera ni los de adentro, sino por la propia superación y las propias victorias. <strong>Quiero un fin de semana lleno de pequeños progresos, por más pequeños que sean.</strong><br><br>
+    Poli :)
+  </div>
+</template>
+
+<template id="t-c3s7lun-content">
+  <div class="plan-header">
+    <div class="plan-day-label" style="color:var(--blue)">Lunes 19/10 · Ciclo 3</div>
+    <div class="plan-title">2T 2026 — Semana 11</div>
+    <div class="plan-tags">
+      <span class="tag tag-oly">Snatch Complex</span>
+      <span class="tag tag-str">Back Squat 80%</span>
+      <span class="tag tag-wod">Strongman</span>
+      <span class="tag tag-wod">Acondicionamiento</span>
+      <span class="tag tag-high">Carga Alta</span>
+    </div>
+  </div>
+
+  <div class="sub-label" style="color:var(--green)">Sesión 1</div>
+
+  <details class="block">
+    <summary><span class="block-icon">⚡</span><div><div class="block-title">CALENTAMIENTO</div><div class="block-subtitle">Pliometría + 3 Rondas</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="ex-group-title">Pliometría — 4 series</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5 Depth Jumps to Hurdle Hop</span><span class="ex-detail">Dejarse caer de cajón de 30-45 cm, rebotar y saltar inmediatamente una valla <strong>más alta que la semana pasada</strong></span></div>
+      </div>
+      <div class="ex-group">
+        <div class="ex-group-title">3 Rondas</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5 Snatch Balances con pausa de 2'' en el fondo</span><span class="ex-detail">Barra vacía</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5 Hang Muscle Snatch</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5 Overhead Squats</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">10 Spanish Squats con banda pesada</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">10 Strict Toes to Bar</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">15 Hollow to Arch Rolls</span></div>
+      </div>
+    </div>
+  </details>
+
+  <details class="block">
+    <summary><span class="block-icon" style="color:var(--green)">🏋️</span><div><div class="block-title">LEVANTAMIENTO OLÍMPICO · Snatch Complex</div><div class="block-subtitle">Pesada + 3×1 + Deficit Snatch Pull</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="ex-group-title">Complex</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">1 Squat Snatch + 1 Low Hang Squat Snatch + 1 Hang Squat Snatch</span></div>
+      </div>
+      <div class="note-box" style="margin:0 0 10px 0;"><strong>Nota:</strong> buscamos una pesada del complex <strong>en menos de 10'</strong>.</div>
+      <div class="ex-group">
+        <div class="ex-group-title">3×1 Complex · Rest 2' entre series</div>
+        <div class="complex-wrap"><div class="complex-list">
+          <div class="c-item"><span class="c-item-name">3×1 Complex</span><span class="c-item-reps" style="color:var(--red)">85% – 90%</span></div>
+        </div></div>
+      </div>
+      <div class="note-box" style="margin:0 0 10px 0;">El <strong>85-90% es sobre la pesada del complex</strong> que acabás de encontrar — ingresá ese peso en la casilla de arriba.</div>
+      <div class="ex-group">
+        <div class="ex-group-title">5×3 Deficit Snatch Pull · Rest 2' entre series</div>
+        <div class="complex-wrap"><div class="complex-list">
+          <div class="c-item"><span class="c-item-name">Serie 1</span><span class="c-item-reps" style="color:var(--red)">85%</span></div>
+          <div class="c-item"><span class="c-item-name">Aumentando por ronda</span><span class="c-item-reps" style="color:var(--red)">+5%</span></div>
+        </div></div>
+      </div>
+      <div class="note-box" style="margin:0;">Empezamos con nuestro 85% y aumentamos de a 5% por ronda. <strong>Descansá 2'</strong> entre series.</div>
+    </div>
+  </details>
+
+  <details class="block">
+    <summary><span class="block-icon" style="color:var(--green)">🏋️</span><div><div class="block-title">FUERZA BÁSICA · Back Squat</div><div class="block-subtitle">4 Series de 6-8 reps · Rest 2' entre series</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="complex-wrap"><div class="complex-list">
+          <div class="c-item"><span class="c-item-name">4×6-8 reps</span><span class="c-item-reps" style="color:var(--red)">80%</span></div>
+        </div></div>
+      </div>
+      <div class="note-box" style="margin:0;">Sobre nuestro 1RM. <strong>Descanso 2'</strong> entre series.</div>
+    </div>
+  </details>
+
+  <details class="wod-block">
+    <summary><span class="block-icon" style="color:var(--blue)">🔁</span><div><div class="block-title">METCON</div><div class="block-subtitle">For Time · 3 Rondas · Rest 2' entre cada una</div></div><span class="block-chevron">▼</span></summary>
+    <div class="wod-body">
+      <div class="ex-group">
+        <div class="ex-group-title">3 Rondas</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">12 Box Jump Over</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">50 mts Bearhug Sandbag Carry</span><span class="ex-detail">70 / 50 kg · Scaled 50 / 30 kg — o Doble KB Front Rack Carry pesado</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">8 Sandbag to Shoulder</span><span class="ex-detail">Alternando entre hombros — o Doble KB Clean pesado</span></div>
+      </div>
+      <div class="note-box" style="margin:0;"><strong>Rest 2'</strong> entre rondas.</div>
+    </div>
+  </details>
+
+  <div class="sub-label" style="color:var(--orange)">Sesión 2 — Acondicionamiento</div>
+
+  <details class="wod-block">
+    <summary><span class="block-icon" style="color:var(--blue)">🔁</span><div><div class="block-title">BLOQUE 1 · 30-20-10</div><div class="block-subtitle">Progresión de RPE por ronda</div></div><span class="block-chevron">▼</span></summary>
+    <div class="wod-body">
+      <div class="ex-group">
+        <div class="ex-group-title">30 - 20 - 10</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">Cal Row</span><span class="ex-detail">o Shuttle Runs (2×7,5 mts)</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">Cal Bike</span><span class="ex-detail">o Box Step Up con saco de 20 / 15 kg</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">Strict Pull Ups</span></div>
+      </div>
+      <div class="note-box note-warn" style="margin:0;">
+        <strong>Ritmo en las máquinas:</strong> Ronda 30 → RPE 5-6 · Ronda 20 → RPE 7 · Ronda 10 → <strong>RPE 9-10</strong>.
+      </div>
+    </div>
+  </details>
+
+  <div class="note-box note-warn" style="margin:0 0 12px 0;text-align:center;"><strong>Rest 10'</strong></div>
+
+  <details class="wod-block">
+    <summary><span class="block-icon" style="color:var(--blue)">🔁</span><div><div class="block-title">BLOQUE 2 · 8 Series</div><div class="block-subtitle">Ritmo fuerte / competitivo · 60'' on / 60'' off</div></div><span class="block-chevron">▼</span></summary>
+    <div class="wod-body">
+      <div class="ex-group">
+        <div class="ex-group-title">8 Series @ ritmo fuerte / competitivo</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">60'' Row / Run</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">60'' Rest</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">60'' Ski Erg</span><span class="ex-detail">o Sumo Deadlift High Pull con KB de 24 kg · o barra de 30 / 25 kg</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">60'' Rest</span></div>
+      </div>
+    </div>
+  </details>
+</template>
+
+<template id="t-c3s7mar-content">
+  <div class="plan-header">
+    <div class="plan-day-label" style="color:var(--blue)">Martes 20/10 · Ciclo 3</div>
+    <div class="plan-title">2T 2026 — Semana 11</div>
+    <div class="plan-tags">
+      <span class="tag tag-oly">Acond. Gimnástico</span>
+      <span class="tag tag-str">Estructura</span>
+      <span class="tag tag-wod">AMRAP 30'</span>
+      <span class="tag tag-high">Carga Alta</span>
+    </div>
+  </div>
+
+  <div class="sub-label" style="color:var(--green)">Sesión 1</div>
+
+  <details class="block">
+    <summary><span class="block-icon">⚡</span><div><div class="block-title">CALENTAMIENTO (15 minutos)</div><div class="block-subtitle">Pliometría + 3 Rondas</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="ex-group-title">Pliometría — 4 series</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5 Plyo Push-ups to Deficit</span><span class="ex-detail">Empuje explosivo cayendo con las manos desde discos al piso</span></div>
+      </div>
+      <div class="ex-group">
+        <div class="ex-group-title">3 Rondas</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">10/10 Bottoms Up KB Press half kneeling</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">2 Wall Walks subiendo a dos discos de 5 o 10 kg</span><span class="ex-detail">Con 3'' de pausa mirando a la pared</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">20 mts Bear Crawl con medball en espalda lumbar</span><span class="ex-detail">Sin dejarla caer</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5/5 Renegade Row desde Plancha</span></div>
+      </div>
+    </div>
+  </details>
+
+  <details class="block">
+    <summary><span class="block-icon" style="color:var(--yellow)">🤸</span><div><div class="block-title">ACOND. GIMNÁSTICO · Bloque 1</div><div class="block-subtitle">2 Series · Rest libre</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="ex-group-title">2 Series · Descanso libre entre cada trabajo</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">45'' Max Rep 360° hacia la izquierda + 360° hacia la derecha</span><span class="ex-detail">Si podés hacerlo sin caerte, ideal</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">45'' — 5 Toes to Ring + 4 Ring Muscle Ups + 3 Dips + Max L-Sit Hold</span><span class="ex-detail">o 5 Toes to Bar + 4 Bar Muscle Ups + 3 Dips + Max L-Hang</span></div>
+      </div>
+    </div>
+  </details>
+
+  <details class="block">
+    <summary><span class="block-icon" style="color:var(--yellow)">🤸</span><div><div class="block-title">ACOND. GIMNÁSTICO · Bloque 2</div><div class="block-subtitle">4 Intervalos continuos de 3'</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="ex-group-title">4 Intervalos de 3'</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5-7 Ring Muscle Up UBK / BMU UBK</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">Resto del tiempo: Assault Bike @ RPE 4-5</span><span class="ex-detail">o bien trote ligero</span></div>
+      </div>
+    </div>
+  </details>
+
+  <details class="block">
+    <summary><span class="block-icon" style="color:var(--orange)">🤸</span><div><div class="block-title">ACOND. GIMNÁSTICO · Bloque 3 · HSPU Déficit</div><div class="block-subtitle">4 Series · Rest 3-4'</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="note-box" style="margin:0 0 10px 0;">
+        Mismo trabajo que el viernes — <strong>intentá aumentar la cantidad de reps</strong>.
+      </div>
+      <div class="ex-group">
+        <div class="ex-group-title">4 Series — AMRAP UBK de Kipping HSPU con déficit</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">Disco de 20 kg por lado</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">10'' Rest</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">Disco de 15 kg por lado</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">10'' Rest</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">Disco de 10 kg por lado</span></div>
+      </div>
+      <div class="note-box" style="margin:0 0 8px 0;">
+        En los tres tramos: <strong>bajando en 4'', subiendo explosivamente</strong>. Pará una o dos reps antes del fallo.
+      </div>
+      <div class="note-box" style="margin:0;"><strong>Rest 3-4'</strong> entre series.</div>
+    </div>
+  </details>
+
+  <details class="wod-block">
+    <summary><span class="block-icon" style="color:var(--blue)">🔁</span><div><div class="block-title">ACOND. GIMNÁSTICO · Bloque 4</div><div class="block-subtitle">5 Series de 3 × 1' · Rest 3' entre series</div></div><span class="block-chevron">▼</span></summary>
+    <div class="wod-body">
+      <div class="note-box" style="margin:0 0 10px 0;">
+        No vayas a fondo en las calorías, pero <strong>apuntá a un ritmo fuerte que puedas repetir</strong> a lo largo de todas las series.
+      </div>
+      <div class="ex-group">
+        <div class="ex-group-title">5 Series — cada minuto, max cal en el tiempo restante</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">1' — 1 Rope Climb Legless + Max Cal Row</span><span class="ex-detail">Comenzás desde el piso sentado · o Bike Cals, o Shuttle Runs de 2×7,5 mts</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">1' — 10 mts Handstand Walk AFAP + Max Cal Row</span><span class="ex-detail">o Bike Cals, o Shuttle Runs de 2×7,5 mts</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">1' — 15 Toes to Bar AFAP + Max Cal Row</span><span class="ex-detail">o Bike Cals, o Shuttle Runs de 2×7,5 mts</span></div>
+      </div>
+      <div class="note-box" style="margin:0;"><strong>Rest 3'</strong> entre series.</div>
+    </div>
+  </details>
+
+  <div class="sub-label" style="color:var(--orange)">Sesión 2</div>
+
+  <details class="block">
+    <summary><span class="block-icon" style="color:var(--orange)">💪</span><div><div class="block-title">ESTRUCTURA · EMOM 20'</div><div class="block-subtitle">Dos bloques de 10' · Más pesado que la semana pasada</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="ex-group-title">0 - 10'</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">Min 1: 6-8 DB Bench Press</span><span class="ex-detail">+ pesado que la semana pasada · bajando en 4'', subo rápido</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">Min 2: 6-8 DB Row a 1 brazo</span><span class="ex-detail">+ pesado que la semana pasada · bajando en 4'', subo rápido</span></div>
+      </div>
+      <div class="ex-group">
+        <div class="ex-group-title">11 - 20'</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">Min 1: 8-10 Skull Crushers</span><span class="ex-detail">+ pesado que la semana pasada · bajando en 2'', subo rápido</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">Min 2: 8-10 EZ Bar Bicep Curl</span><span class="ex-detail">+ pesado que la semana pasada · bajando en 2'', subo rápido</span></div>
+      </div>
+    </div>
+  </details>
+
+  <details class="wod-block">
+    <summary><span class="block-icon" style="color:var(--blue)">🏃</span><div><div class="block-title">CAPACIDAD AERÓBICA · AMRAP 30'</div><div class="block-subtitle">Run + Row + Ski con progresión de RPE</div></div><span class="block-chevron">▼</span></summary>
+    <div class="wod-body">
+      <div class="ex-group">
+        <div class="ex-group-title">AMRAP 30'</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">1000 mts Run</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">750 mts Row</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">500 mts Ski Erg</span></div>
+      </div>
+      <div class="note-box note-warn" style="margin:0;">
+        <strong>Progresión de RPE:</strong> del minuto 0 al 15' → RPE 5-6 · del 16' al 25' → RPE 7 · del 26' al 30' → <strong>RPE 8-9</strong>.
+      </div>
+    </div>
+  </details>
+
+  <div class="note-box" style="margin:0;">
+    <strong>Qué anotamos hoy:</strong><br>
+    · <strong>Handstand Push Ups Déficit</strong> — la cantidad de HSPU con déficit que pudiste hacer<br>
+    · <strong>Cantidad de calorías remadas</strong> — en el bloque gimnástico + Row
+  </div>
+</template>
+
+<template id="t-c3s7mie-content">
+  <div class="plan-header">
+    <div class="plan-day-label" style="color:var(--blue)">Miércoles 21/10 · Ciclo 3</div>
+    <div class="plan-title">2T 2026 — Semana 11</div>
+    <div class="plan-tags">
+      <span class="tag tag-oly">Potencia</span>
+      <span class="tag tag-str">Deadlift 4 pesadas</span>
+      <span class="tag tag-str">Yoke</span>
+      <span class="tag tag-wod">Capacidad de Trabajo</span>
+      <span class="tag tag-high">Carga Alta</span>
+    </div>
+  </div>
+
+  <div class="sub-label" style="color:var(--green)">Sesión 1</div>
+
+  <details class="block">
+    <summary><span class="block-icon">⚡</span><div><div class="block-title">CALENTAMIENTO</div><div class="block-subtitle">Pliometría + 3 Rondas</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="ex-group-title">Pliometría — 4 series</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">3 Broad Jump to Vertical Jump</span><span class="ex-detail">Salto en largo seguido inmediatamente de un salto vertical máximo</span></div>
+      </div>
+      <div class="ex-group">
+        <div class="ex-group-title">3 Rondas</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">5/5 Romanian Deadlift a 1 pierna</span><span class="ex-detail">Con barra sola</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">10/10 Single Leg Glute Bridges con pausa arriba</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">15 V-Ups con disco</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">20 Mountain Climbers por lado contra pared</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">10 Buenos Días</span><span class="ex-detail">Subiendo de peso cada ronda</span></div>
+      </div>
+    </div>
+  </details>
+
+  <details class="block">
+    <summary><span class="block-icon" style="color:var(--yellow)">⚡</span><div><div class="block-title">POTENCIA · EMOM 15'</div><div class="block-subtitle">Sprint + Lanzamientos + Saltos</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="ex-group-title">EMOM 15'</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">Min 1: 50 mts Sprint en cinta curva</span><span class="ex-detail">o en la calle si no tenés</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">Min 2: 5/5 Lanzamiento de Medball liviana a la pared, de costado (rotacional)</span><span class="ex-detail">Reseteá en cada rep</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">Min 3: 5 Saltos al cajón máximos</span><span class="ex-detail">Buscá en los 15' una buena altura con discos encima del cajón</span></div>
+      </div>
+    </div>
+  </details>
+
+  <details class="block">
+    <summary><span class="block-icon" style="color:var(--green)">🏋️</span><div><div class="block-title">FUERZA BÁSICA · Deadlift</div><div class="block-subtitle">4 reps pesadas del día · Todo en menos de 10-12'</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">Buscá 4 reps pesadas del día</span><span class="ex-detail">No un 4RM</span></div>
+      </div>
+      <div class="note-box" style="margin:0;"><strong>Reseteá cada repetición.</strong> Todo en menos de 10-12'.</div>
+    </div>
+  </details>
+
+  <details class="block">
+    <summary><span class="block-icon" style="color:var(--green)">🏋️</span><div><div class="block-title">FUERZA BÁSICA · Squats</div><div class="block-subtitle">EMOM 10' · Back Squat con banda</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="ex-group-title">EMOM 10' — 2 Back Squats con banda entre rodillas</div>
+        <div class="complex-wrap"><div class="complex-list">
+          <div class="c-item"><span class="c-item-name">2 Back Squats</span><span class="c-item-reps" style="color:var(--orange)">70% – 75%</span></div>
+        </div></div>
+      </div>
+      <div class="note-box" style="margin:0;"><strong>Bajamos en 4'', subimos rápido.</strong> Porcentajes sobre el 1RM.</div>
+    </div>
+  </details>
+
+  <details class="block">
+    <summary><span class="block-icon" style="color:var(--orange)">💪</span><div><div class="block-title">FUERZA ESTRUCTURAL / CORE</div><div class="block-subtitle">EMOM 8' · Back Rack Yoke March</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="ex-group-title">EMOM 8' — 15'' Back Rack Yoke March</div>
+        <div class="complex-wrap"><div class="complex-list">
+          <div class="c-item"><span class="c-item-name">15'' Yoke March</span><span class="c-item-reps" style="color:var(--red)">90%</span></div>
+        </div></div>
+      </div>
+      <div class="note-box" style="margin:0;">
+        Sacamos la barra del rack en back rack y caminamos en el lugar, <strong>ajustando mucho la zona media</strong>. El 90% es sobre tu RM de Back Squat.
+      </div>
+    </div>
+  </details>
+
+  <details class="block">
+    <summary><span class="block-icon" style="color:var(--orange)">🧱</span><div><div class="block-title">STRONGMAN / CORE</div><div class="block-subtitle">5 Series · Yoke Hold + Lunges</div></div><span class="block-chevron">▼</span></summary>
+    <div class="block-body">
+      <div class="ex-group">
+        <div class="ex-group-title">5 Series</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">10'' Front Rack Yoke Hold</span><span class="ex-detail">O aguantás la barra en front rack · PESADO — 1RM de Front Squat</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">20 mts Sandbag Bearhug Walking Lunges</span><span class="ex-detail">70 / 50 kg · Scaled 50 / 30 kg</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">10'' Front Rack Yoke Hold</span><span class="ex-detail">PESADO — 1RM de Front Squat</span></div>
+      </div>
+    </div>
+  </details>
+
+  <div class="sub-label" style="color:var(--orange)">Sesión 2</div>
+
+  <details class="wod-block">
+    <summary><span class="block-icon" style="color:var(--blue)">🔁</span><div><div class="block-title">CAPACIDAD DE TRABAJO</div><div class="block-subtitle">¡Todo seguido! · Intervalos + AMRAP 12' + Intervalos</div></div><span class="block-chevron">▼</span></summary>
+    <div class="wod-body">
+      <div class="ex-group">
+        <div class="ex-group-title">Bloque 1 — 2 Rondas</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">3' Row</span><span class="ex-detail">RPE 5-6</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">3' Row</span><span class="ex-detail">RPE 7</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">3' Assault Bike</span><span class="ex-detail">RPE 5-6</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">3' Assault Bike</span><span class="ex-detail">RPE 7</span></div>
+      </div>
+
+      <div class="ex-group">
+        <div class="ex-group-title">Bloque 2 — AMRAP 12' · bloques de 40''</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">40'' Max Rep Box Step Up con Corebag</span><span class="ex-detail">30 / 20 kg · RPE 6</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">40'' Max Farmer's Carry</span><span class="ex-detail">2×32 / 24 kg · RPE 6</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">40'' Max saltos de soga</span><span class="ex-detail">Ronda 1: Double Unders · Ronda 2: Simple Crossover · Ronda 3: Doble Crossover · RPE 8</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">40'' Max Rep Box Step Up con Corebag</span><span class="ex-detail">RPE 8</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">40'' Max Rep Farmer's Carry</span><span class="ex-detail">2×32 / 24 kg · RPE 8</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">40'' Max Rep Burpees Over the Bar</span><span class="ex-detail">Ronda 1: de costado · Ronda 2: en diagonal · Ronda 3: de frente a la barra · RPE 8</span></div>
+      </div>
+
+      <div class="ex-group">
+        <div class="ex-group-title">Bloque 3 — 2 Rondas</div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">3' Ski Erg</span><span class="ex-detail">RPE 5-6</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">3' Ski Erg</span><span class="ex-detail">RPE 8</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">3' Assault Bike</span><span class="ex-detail">RPE 5-6</span></div>
+        <div class="ex-item"><div class="ex-bullet"></div><span class="ex-name">3' Assault Bike</span><span class="ex-detail">RPE 8</span></div>
+      </div>
+
+      <div class="note-box" style="margin:0;">
+        <strong>Nota:</strong> si tenés una sola máquina, los últimos intervalos de 2×3' los hacés corriendo. Si no tenés ninguna máquina, hacés todos corriendo, intercalando entre <strong>3' RPE 5 y 3' RPE 8</strong>.
+      </div>
+    </div>
+  </details>
+</template>
+
 </body>
 </html>
