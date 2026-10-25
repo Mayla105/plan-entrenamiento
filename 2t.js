@@ -176,6 +176,9 @@ const PLAN2T = {
             { id: 'c3s7lun', label: 'Lunes 19/10', sub: 'Snatch Complex pesado + Back Squat 80% + Strongman + Acondicionamiento', carga: 'high', contenido: 't-c3s7lun-content' },
             { id: 'c3s7mar', label: 'Martes 20/10', sub: 'Acondicionamiento Gimnástico (4 bloques) + Estructura + AMRAP 30', carga: 'high', contenido: 't-c3s7mar-content' },
             { id: 'c3s7mie', label: 'Miércoles 21/10', sub: 'Potencia + Deadlift 4 pesadas + Yoke + Capacidad de Trabajo', carga: 'high', contenido: 't-c3s7mie-content' },
+            { id: 'c3s7jue', label: 'Jueves 22/10', sub: 'Descanso Activo · Zona 2 · 45–50 min', carga: 'low', contenido: 't-c3s7jue-content' },
+            { id: 'c3s7vie', label: 'Viernes 23/10', sub: 'Potencia + Squat Clean Complex + Front Squat 4×6-8 + Open Alaska 27.1 + Capacidad Aeróbica', carga: 'high', contenido: 't-c3s7vie-content' },
+            { id: 'c3s7sab', label: 'Sábado 24/10', sub: 'Acondicionamiento Gimnástico (2 bloques) + Open Alaska 27.2', carga: 'high', contenido: 't-c3s7sab-content' },
           ]
         }
       ]
